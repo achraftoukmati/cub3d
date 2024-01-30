@@ -11,11 +11,11 @@ OBJS = ${SRC:.c=.o}
 %.o: %.c
 	${CC} ${CFLAGS} -c $< -o $@
 
-LIB_DIR = ${HOME}/Desktop/cub/mlx/libmlx42.a
-GLFW_DIR = ${HOME}/Desktop/cub/mlx/libglfw3.a
+LIB = ./mlx/libmlx42.a
+GLFW = ./mlx/libglfw3.a
 
 ${NAME}: ${OBJS}
-	${CC} ${CFLAGS} -framework Cocoa -framework OpenGL -framework IOKit ${GLFW_DIR} ${LIB_DIR} ${OBJS} -o ${NAME}
+	${CC} ${CFLAGS} -framework Cocoa -framework OpenGL -framework IOKit ${GLFW} ${LIB} ${OBJS} -o ${NAME}
 
 all: ${NAME}
 
