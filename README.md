@@ -1,2 +1,3 @@
 # cub3d
-run with make && ./cub
+runs with :
+$> make && ./cub
