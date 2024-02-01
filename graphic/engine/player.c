@@ -6,7 +6,7 @@
 /*   By: atoukmat <atoukmat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 22:23:57 by atoukmat          #+#    #+#             */
-/*   Updated: 2024/01/29 22:47:20 by atoukmat         ###   ########.fr       */
+/*   Updated: 2024/02/01 05:02:33 by atoukmat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,11 +39,13 @@ int locat_player(char **map, char target)
 
 void update_player(t_data *data)
 {
+    key_press(data);
     data->player->rotation_angel += data->player->turn_diraction * data->player->rotation_speed;
     int move_step = data->player->walk_diraction * data->player->move_speed;
-    float n_x = data->player->player_x + move_step * cos(data->player->rotation_angel);
-    float n_y = data->player->player_y +  move_step * sin(data->player->rotation_angel);
-    if(has_wall_at(data,n_x,n_y)) 
+    int strafe_step = data->player->walk_lr_diraction * data->player->move_speed;
+    float n_x = data->player->player_x + (move_step * cos(data->player->rotation_angel)) + (strafe_step * cos(data->player->rotation_angel + M_PI/2)); 
+    float n_y = data->player->player_y + (move_step * sin(data->player->rotation_angel)) + (strafe_step * sin(data->player->rotation_angel + M_PI/2));
+    if (has_wall_at(data, n_x, n_y)) 
     {
         data->player->player_x = n_x;
         data->player->player_y = n_y;

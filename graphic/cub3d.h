@@ -6,7 +6,7 @@
 /*   By: atoukmat <atoukmat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 21:58:07 by atoukmat          #+#    #+#             */
-/*   Updated: 2024/01/29 23:35:12 by atoukmat         ###   ########.fr       */
+/*   Updated: 2024/02/01 05:54:31 by atoukmat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <string.h>
 # include <stdlib.h>
 # include <stdio.h>
+# include <unistd.h>
 # include <math.h>
 #include "../mlx/MLX42/MLX42.h" // include the mlx library
 # define S_W 1900 // screen width
@@ -27,7 +28,7 @@
 #define DARK_ORANGE 0x483C32
 #define DARK_GREEN 0x3e00ed
 
-
+#define ERROR 1
 #define WHITE 0xFFFFFFFF
 #define BLUE 0xFFFF
 #define RED 0xFF0000FF
@@ -87,11 +88,12 @@ typedef struct s_rays {
 }  t_rays;
 
 typedef struct s_player {
-    int player_x;
-    int player_y;
+    float player_x;
+    float player_y;
     float radius;
     int turn_diraction;
     int walk_diraction;
+    int walk_lr_diraction;
     float rotation_angel;
     int move_speed;
     float rotation_speed;
@@ -123,5 +125,6 @@ int has_wall_at(t_data *data, float x, float y);
 float normalize_angle(float angle);
 void update_player(t_data *data);
 int locat_player(char **map, char target);
+void exiting(t_data *data,int var);
 
 #endif
