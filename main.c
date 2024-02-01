@@ -6,12 +6,12 @@
 /*   By: atoukmat <atoukmat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 22:12:05 by atoukmat          #+#    #+#             */
-/*   Updated: 2024/02/01 07:39:32 by atoukmat         ###   ########.fr       */
+/*   Updated: 2024/02/01 22:05:54 by atoukmat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./graphic/cub3d.h"
-
+#include "./parssing/headers/cub3d.h"
 
 int init_player(t_data *data)
 {
@@ -101,10 +101,10 @@ int main(void)
 {
     t_data data;
     init(&data);
-    printf("%f\n",(data.player->player_x +40 ) /80 );
-    printf("%f\n",(data.player->player_y +40 ) /80 );
     // exit(0);
     start_game(&data);
     exiting(&data,0);
     return 0;
 }
+
+
