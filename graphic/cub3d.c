@@ -6,7 +6,7 @@
 /*   By: atoukmat <atoukmat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 22:12:00 by atoukmat          #+#    #+#             */
-/*   Updated: 2024/02/01 06:14:23 by atoukmat         ###   ########.fr       */
+/*   Updated: 2024/02/01 07:16:02 by atoukmat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,8 @@ void game_loop(void *data)
 void escape(void *data)
 {
     if(mlx_is_key_down(((t_data *)data)->mlx->mlx,MLX_KEY_ESCAPE))
-    {
         exiting((t_data *)data,0);
-    }
+
 
 }
 

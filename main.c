@@ -6,7 +6,7 @@
 /*   By: atoukmat <atoukmat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 22:12:05 by atoukmat          #+#    #+#             */
-/*   Updated: 2024/02/01 06:24:23 by atoukmat         ###   ########.fr       */
+/*   Updated: 2024/02/01 07:39:32 by atoukmat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,14 +34,14 @@ int init_map(t_map *data)
 {    
 
     data->map = malloc(sizeof(char *) * 6);
-    data->map[0] = strdup("11111111111111111111111");
-    data->map[1] = strdup("10000000100000000000001");
-    data->map[2] = strdup("100000010000000P0000001");
-    data->map[3] = strdup("100000000000000000000011");
-    data->map[4] = strdup("1111111111111111111111111");
+    data->map[0] = strdup("1111111111111111111111111");
+    data->map[1] = strdup("1000000010000000000000001");
+    data->map[2] = strdup("10000011000000000000P111");
+    data->map[3] = strdup("1000000000000000000000011");
+    data->map[4] = strdup("11111111111111111111111111");
     data->map[5] = NULL;
     data->map_height = 5;
-    data->map_width = 16;
+    data->map_width = 100;
     data->unit = 80;
     data->angle = 0.0f;
     return (0);
@@ -101,6 +101,9 @@ int main(void)
 {
     t_data data;
     init(&data);
+    printf("%f\n",(data.player->player_x +40 ) /80 );
+    printf("%f\n",(data.player->player_y +40 ) /80 );
+    // exit(0);
     start_game(&data);
     exiting(&data,0);
     return 0;
