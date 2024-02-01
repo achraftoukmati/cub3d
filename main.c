@@ -6,7 +6,7 @@
 /*   By: atoukmat <atoukmat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 22:12:05 by atoukmat          #+#    #+#             */
-/*   Updated: 2024/02/01 22:05:54 by atoukmat         ###   ########.fr       */
+/*   Updated: 2024/02/01 22:08:38 by atoukmat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,7 @@ void free_all(t_data *data)
     if(data->vars)
         free(data->vars);
 }
+
 
 void exiting(t_data *data,int var)
 {
