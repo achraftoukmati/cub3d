@@ -6,7 +6,7 @@
 /*   By: atoukmat <atoukmat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 22:12:05 by atoukmat          #+#    #+#             */
-/*   Updated: 2024/02/02 18:29:14 by atoukmat         ###   ########.fr       */
+/*   Updated: 2024/02/02 20:39:03 by atoukmat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,10 @@ int init_map(t_map *data , t_game *ayoub)
     data->map_height = max_h(data->map);
     data->map_width = max_w(data->map);
     data->unit = 80;
+    data->ea = ft_strdup( ayoub->EA_s[1]);
+    data->no = ft_strdup(ayoub->NO_s[1]);
+    data->so = ft_strdup(ayoub->SO_s[1]);
+    data->we = ft_strdup(ayoub->WE_s[1]);
     data->angle = 0.0f;
     return (0);
 }

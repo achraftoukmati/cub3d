@@ -4,7 +4,7 @@ SRC = main.c ./graphic/engine/map.c ./graphic/engine/keys.c ./graphic/engine/pla
 
 CC = cc
 
-CFLAGS =# -fsanitize=address -g
+CFLAGS = -fsanitize=address -g
 
 OBJS = ${SRC:.c=.o}
 

@@ -6,7 +6,7 @@
 /*   By: atoukmat <atoukmat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 22:14:30 by atoukmat          #+#    #+#             */
-/*   Updated: 2024/01/30 13:40:02 by atoukmat         ###   ########.fr       */
+/*   Updated: 2024/02/02 20:57:52 by atoukmat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -131,8 +131,28 @@ void cast_ray(t_data *data, t_rays *ray)
 }
 
 
+mlx_texture_t *get_wall_texture(t_rays *ray,t_mlx *mlx)
+{
+    if(ray->flag == 1)
+    {
+        if(sin(ray->angle) > 0)
+            return mlx->SO;
+        else
+            return mlx->EA;
+    
+    }
+    else
+    {
+        if(cos(ray->angle) > 0)
+            return mlx->NO;
+        else
+            return mlx->WE;
+    }
+    
+    
+}
 
-void stream_camera(t_data *data, t_rays *ray, int ray_id)
+void stream_camera(t_data *data, t_rays *ray)
 {
 
 
@@ -150,9 +170,10 @@ void stream_camera(t_data *data, t_rays *ray, int ray_id)
     while(data->vars->start_pix < data->vars->end_pix)
     {
         int distance_from_top = (int)data->vars->start_pix - ((S_H / 2) - (data->vars->strip_wall_h / 2));
+        data->mlx->wall = get_wall_texture(ray,data->mlx);
         data->vars->offset_y = distance_from_top * ((float)data->mlx->wall->height / data->vars->strip_wall_h);
         int color = get_color_at_position(data->mlx->wall, data->vars->offset_x, data->vars->offset_y);
-        mlx_put_pixel(data->mlx->img, ray_id, data->vars->start_pix, color);
+        mlx_put_pixel(data->mlx->img, ray->ray_id, data->vars->start_pix, color);
         data->vars->start_pix++;
     }
 }
@@ -165,8 +186,9 @@ void ray_casting(t_data *data)
     while (i < data->player->num_rays) 
     {
         data->player->rays[i].angle = normalize_angle(ray_angle);
+        data->player->rays[i].ray_id = i;
         cast_ray(data, &data->player->rays[i]);
-        stream_camera(data, &data->player->rays[i], i);
+        stream_camera(data, &data->player->rays[i]);
         data->player->rays[i].flag = 0;
         ray_angle += (data->player->FOV_angle / data->player->num_rays);
         i++;

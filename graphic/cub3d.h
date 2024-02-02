@@ -6,7 +6,7 @@
 /*   By: atoukmat <atoukmat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 21:58:07 by atoukmat          #+#    #+#             */
-/*   Updated: 2024/02/02 18:38:05 by atoukmat         ###   ########.fr       */
+/*   Updated: 2024/02/02 20:41:45 by atoukmat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,10 @@
 
 typedef struct s_map {
     char **map;
+    char *so;
+    char *no;
+    char *we;
+    char *ea;
     int map_width;
     int map_height;
     int unit;
@@ -83,6 +87,7 @@ typedef struct s_vars {
 } t_vars;
 
 typedef struct s_rays {
+    int ray_id;
     int flag;
     float x;
     float y;
