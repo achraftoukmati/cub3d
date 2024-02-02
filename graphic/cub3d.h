@@ -6,7 +6,7 @@
 /*   By: atoukmat <atoukmat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 21:58:07 by atoukmat          #+#    #+#             */
-/*   Updated: 2024/02/01 05:54:31 by atoukmat         ###   ########.fr       */
+/*   Updated: 2024/02/02 02:17:20 by atoukmat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,7 +114,6 @@ typedef struct s_data
 int    get_rgba(int r, int g, int b, int a);
 int    get_color_at_position(mlx_texture_t *texture, int x, int y);
 void ray_casting(t_data *data);
-int init(t_data *data);
 void update_map(t_data *data);
 void start_game(t_data *data);
 void game_loop(void *data);

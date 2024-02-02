@@ -6,7 +6,7 @@
 /*   By: atoukmat <atoukmat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 22:12:05 by atoukmat          #+#    #+#             */
-/*   Updated: 2024/02/01 22:08:38 by atoukmat         ###   ########.fr       */
+/*   Updated: 2024/02/02 02:23:32 by atoukmat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,27 +30,21 @@ int init_player(t_data *data)
     return (0);
 }
 
-int init_map(t_map *data)
+int init_map(t_map *data , t_game *ayoub)
 {    
 
-    data->map = malloc(sizeof(char *) * 6);
-    data->map[0] = strdup("1111111111111111111111111");
-    data->map[1] = strdup("1000000010000000000000001");
-    data->map[2] = strdup("10000011000000000000P111");
-    data->map[3] = strdup("1000000000000000000000011");
-    data->map[4] = strdup("11111111111111111111111111");
-    data->map[5] = NULL;
-    data->map_height = 5;
-    data->map_width = 100;
+    data->map = ayoub->map;
+    data->map_height = 15;
+    data->map_width = 35;
     data->unit = 80;
     data->angle = 0.0f;
     return (0);
 }
 
-int init(t_data *data)
+int init(t_data *data , t_game *ayoub)
 {
     data->map = malloc(sizeof(t_map));
-    init_map(data->map);
+    init_map(data->map ,ayoub);
     data->player = malloc(sizeof(t_player));
     init_player(data);
     data->mlx = malloc(sizeof(t_mlx));
@@ -98,11 +92,20 @@ void exiting(t_data *data,int var)
     exit(var);
 }
 
-int main(void)
+int main(int ac, char **av)
 {
+    t_game	glo;
+	int		i;
+
+	if (ac != 2)
+	{
+		ft_rr("UNVALID_INPUT 😨\n");
+	}
     t_data data;
-    init(&data);
-    // exit(0);
+	glo.map_name = av[1];
+	cub_all(&glo);
+	chkeck_player(&glo);
+    init(&data,&glo);
     start_game(&data);
     exiting(&data,0);
     return 0;
