@@ -6,7 +6,7 @@
 /*   By: atoukmat <atoukmat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 22:12:05 by atoukmat          #+#    #+#             */
-/*   Updated: 2024/02/02 05:04:07 by atoukmat         ###   ########.fr       */
+/*   Updated: 2024/02/02 05:07:01 by atoukmat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,68 +75,6 @@ int init_map(t_map *data , t_game *ayoub)
     data->angle = 0.0f;
     return (0);
 }
-// int init_map(t_map *data , t_game *ayoub)
-// {    
-
-//     // data->map = ayoub->map;
-//     int i = 0;
-//     while(ayoub->map_ptr[i])
-//     {
-//         printf("%s\n",ayoub->map_ptr[i]);
-//         i++;
-//     }
-//     data->map = malloc(11 * sizeof(char *));
-//     i = 0;
-//       data->map[i]=strdup("111111111111111111111");
-//     i++;
-//       data->map[i]=strdup("101000001000000000001");
-//     i++;
-//       data->map[i]=strdup("101010101011111110001");
-//     i++;
-//       data->map[i]=strdup("100010100010000010001");
-//     i++;
-//       data->map[i]=strdup("111110101111101011101");
-//     i++;
-//       data->map[i]=strdup("100000101000101000001");
-//     i++;
-//       data->map[i]=strdup("101111101011101111111");
-//     i++;
-//       data->map[i]=strdup("101000001010100000101");
-//     i++;
-//       data->map[i]=strdup("101011111010111110101");
-//     i++;
-//       data->map[i]=strdup("101010001010100010101");
-//     i++;
-//       data->map[i]=strdup("101110101010101010101");
-//     i++;
-//       data->map[i]=strdup("100000101010001010001");
-//     i++;
-//       data->map[i]=strdup("111111101011111011101");
-//     i++;
-//         data->map[i]=strdup("100000101000100010001");
-//     i++;
-//       data->map[i]=strdup("101110101110101110111");
-//     i++;
-//       data->map[i]=strdup("101000100000100010101");
-//     i++;
-//       data->map[i]=strdup("101011111111111010101");
-//     i++;
-//       data->map[i]=strdup("100010000000000010001");
-//     i++;
-//       data->map[i]=strdup("101010111011111111101");
-//     i++;
-//           data->map[i]=strdup("1N1000001000000000001");
-//     i++;
-//           data->map[i]=strdup("111111111111111111111");
-//     i++;
-//           data->map[i]=NULL;
-    
-//     data->map_height = max_h(data->map);
-//     data->map_width = max_w(data->map);
-//     data->unit = 80;
-//     data->angle = 0.0f;
-//     return (0);
-// }
 
 int init(t_data *data , t_game *ayoub)
 {
