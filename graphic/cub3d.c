@@ -6,7 +6,7 @@
 /*   By: atoukmat <atoukmat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 22:12:00 by atoukmat          #+#    #+#             */
-/*   Updated: 2024/02/01 07:16:02 by atoukmat         ###   ########.fr       */
+/*   Updated: 2024/02/02 02:44:43 by atoukmat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ void update_keys(t_data *data)
     data->player->turn_diraction = 0;
     data->player->walk_lr_diraction = 0;
     mlx_image_to_window(data->mlx->mlx, data->mlx->img, 0, 0);
-
 }
 
 void game_loop(void *data)
@@ -34,8 +33,6 @@ void escape(void *data)
 {
     if(mlx_is_key_down(((t_data *)data)->mlx->mlx,MLX_KEY_ESCAPE))
         exiting((t_data *)data,0);
-
-
 }
 
 void start_game(t_data *data)

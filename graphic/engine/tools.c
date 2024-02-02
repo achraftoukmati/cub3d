@@ -6,7 +6,7 @@
 /*   By: atoukmat <atoukmat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 22:17:40 by atoukmat          #+#    #+#             */
-/*   Updated: 2024/01/29 23:27:06 by atoukmat         ###   ########.fr       */
+/*   Updated: 2024/02/02 04:11:31 by atoukmat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int has_wall_at(t_data *data, float x, float y)
 {
   int  x_m;
- int  y_m;
+  int  y_m;
 
  if (x < 0 || y < 0)
   return (0);
@@ -24,7 +24,7 @@ int has_wall_at(t_data *data, float x, float y)
  if ((y_m >= data->map->map_height || x_m >= data->map->map_width))
   return (0);
  if (data->map->map[y_m] && x_m <= (int)strlen(data->map->map[y_m]))
-  if (data->map->map[y_m][x_m] == '1')
+  if (data->map->map[y_m][x_m] == '1' )
    return (0);
  return (1);
 }
