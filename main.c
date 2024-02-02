@@ -6,18 +6,19 @@
 /*   By: atoukmat <atoukmat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 22:12:05 by atoukmat          #+#    #+#             */
-/*   Updated: 2024/02/02 05:09:24 by atoukmat         ###   ########.fr       */
+/*   Updated: 2024/02/02 18:29:14 by atoukmat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./graphic/cub3d.h"
 #include "./parssing/headers/cub3d.h"
 #include "./libft/libft.h"
+
 int init_player(t_data *data)
 {
     data->player->radius = 3;
-    data->player->player_x = locat_player(data->map->map,'x');
-    data->player->player_y = locat_player(data->map->map,'y');
+    data->player->player_x = locat_player(data->map->map,'X');
+    data->player->player_y = locat_player(data->map->map,'Y');
     data->player->move_speed = 8;
     data->player->rotation_angel = M_PI / 2;
     data->player->walk_diraction = 0;
@@ -63,11 +64,11 @@ int init_map(t_map *data , t_game *ayoub)
 
     // data->map = ayoub->map;
     int i = 0;
-    // while(data->map[i])
-    // {
-    //     printf("%s\n",data->map[i]);
-    //     i++;
-    // }
+    while(ayoub->map_ptr[i])
+    {
+        printf("%s %d \n",ayoub->map_ptr[i],ayoub->map_ptr[i][0]);
+        i++;
+    }
     printf("%s\n",ayoub->SO);
     data->map = ayoub->map_ptr;
     data->map_height = max_h(data->map);

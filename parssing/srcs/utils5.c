@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils5.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alotfi <alotfi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: atoukmat <atoukmat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 13:02:28 by alotfi            #+#    #+#             */
-/*   Updated: 2024/01/19 10:15:23 by alotfi           ###   ########.fr       */
+/*   Updated: 2024/02/02 17:04:01 by atoukmat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void	ft_check_map2(t_game *glo)
 			if (ft_strchr("1", glo->map_ptr[i][j]))
 			{
 				w = j;
-				if (glo->map_ptr[i - 1][w] == '\0'
+				if (glo->map_ptr[i - 1][w] && glo->map_ptr[i - 1][w] == '\0'
 					&& ft_fchecker(&glo->map_ptr[i][w], '1', '1'))
 					ft_rr("UNVALID_MAP : ^_^\n");
 			}

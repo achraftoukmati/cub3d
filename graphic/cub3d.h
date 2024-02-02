@@ -6,7 +6,7 @@
 /*   By: atoukmat <atoukmat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 21:58:07 by atoukmat          #+#    #+#             */
-/*   Updated: 2024/02/02 02:17:20 by atoukmat         ###   ########.fr       */
+/*   Updated: 2024/02/02 18:38:05 by atoukmat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,11 @@ typedef struct  s_mlx
     mlx_t *mlx;
     mlx_image_t *img;
     mlx_texture_t *wall;
+    mlx_texture_t *NO;
+    mlx_texture_t *SO;
+    mlx_texture_t *WE;
+    mlx_texture_t *EA;
+    
 } t_mlx;
 
 typedef struct s_intersection {

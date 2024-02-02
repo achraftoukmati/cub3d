@@ -6,7 +6,7 @@
 /*   By: atoukmat <atoukmat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 22:23:57 by atoukmat          #+#    #+#             */
-/*   Updated: 2024/02/02 02:50:07 by atoukmat         ###   ########.fr       */
+/*   Updated: 2024/02/02 18:36:06 by atoukmat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,18 +22,17 @@ int locat_player(char **map, char target)
         x = 0;
         while(map[y][x])
         {
-            if(map[y][x] == 'N')
+            if(map[y][x] == 'S' || map[y][x] == 'N'|| map[y][x] == 'E' || map[y][x] == 'W')
             {
-                if(target == 'x')
-                    return (((x + 1 ) * 40 ) + 80);
+                if(target == 'X')
+                    return (((x + 1) * 80 ) - 40);
                 else
-                    return (((y + 1) * 40) + 80);
+                    return (((y + 1) * 80) - 40);
             }
             x++;
         }
         y++;
     }
-    
     return 0;
 }
 

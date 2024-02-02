@@ -6,7 +6,7 @@
 /*   By: atoukmat <atoukmat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 21:26:54 by alotfi            #+#    #+#             */
-/*   Updated: 2024/02/02 02:15:52 by atoukmat         ###   ########.fr       */
+/*   Updated: 2024/02/02 16:43:28 by atoukmat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,23 +67,23 @@ void	chkeck_player(t_game *glo)
 	}
 }
 
-int	ft_main(int ac, char **av)
-{
-	t_game	glo;
-	int		i;
+// int	ft_main(int ac, char **av)
+// {
+// 	t_game	glo;
+// 	int		i;
 
-	if (ac != 2)
-	{
-		ft_rr("UNVALID_INPUT 😨\n");
-	}
-	glo.map_name = av[1];
-	cub_all(&glo);
-	chkeck_player(&glo);
-	i = 0;
-	while (glo.map_ptr[i])
-	{
-		printf("%s\n", glo.map_ptr[i]);
-		i++;
-	}
-	return (0);
-}
+// 	if (ac != 2)
+// 	{
+// 		ft_rr("UNVALID_INPUT 😨\n");
+// 	}
+// 	glo.map_name = av[1];
+// 	cub_all(&glo);
+// 	chkeck_player(&glo);
+// 	i = 0;
+// 	while (glo.map_ptr[i])
+// 	{
+// 		printf("%s\n", glo.map_ptr[i]);
+// 		i++;
+// 	}
+// 	return (0);
+// }
