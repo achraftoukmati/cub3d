@@ -6,7 +6,7 @@
 /*   By: atoukmat <atoukmat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 22:12:05 by atoukmat          #+#    #+#             */
-/*   Updated: 2024/02/02 04:35:48 by atoukmat         ###   ########.fr       */
+/*   Updated: 2024/02/02 05:04:07 by atoukmat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,13 +68,7 @@ int init_map(t_map *data , t_game *ayoub)
     //     printf("%s\n",data->map[i]);
     //     i++;
     // }
-    data->map = malloc(max_h(data->map) * sizeof(char *));
-    while(ayoub->map[i])
-    {
-        data->map[i] = strdup(ayoub->map[i]);
-        i++;
-    }
-    data->map[i] = NULL;
+    data->map = ayoub->map_ptr;
     data->map_height = max_h(data->map);
     data->map_width = max_w(data->map);
     data->unit = 80;
@@ -85,14 +79,14 @@ int init_map(t_map *data , t_game *ayoub)
 // {    
 
 //     // data->map = ayoub->map;
-//     // int i = 0;
-//     // while(data->map[i])
-//     // {
-//     //     printf("%s\n",data->map[i]);
-//     //     i++;
-//     // }
-//     data->map = malloc(11 * sizeof(char *));
 //     int i = 0;
+//     while(ayoub->map_ptr[i])
+//     {
+//         printf("%s\n",ayoub->map_ptr[i]);
+//         i++;
+//     }
+//     data->map = malloc(11 * sizeof(char *));
+//     i = 0;
 //       data->map[i]=strdup("111111111111111111111");
 //     i++;
 //       data->map[i]=strdup("101000001000000000001");
@@ -163,12 +157,12 @@ void leaks_()
 void free_all(t_data *data)
 {
     int i = 0;
-    while(data->map->map[i])
-    {
-        free(data->map->map[i]);
-        i++;
-    }
-    free(data->map->map);
+    // while(data->map->map[i])
+    // {
+    //     free(data->map->map[i]);
+    //     i++;
+    // }
+    // free(data->map->map);
     if(data->map)
         free(data->map);
     if(data->player->rays)
