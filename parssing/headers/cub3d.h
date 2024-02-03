@@ -6,7 +6,7 @@
 /*   By: atoukmat <atoukmat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 17:40:16 by alotfi            #+#    #+#             */
-/*   Updated: 2024/02/03 17:18:36 by atoukmat         ###   ########.fr       */
+/*   Updated: 2024/02/03 17:19:45 by atoukmat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ typedef struct e_colors
 
 typedef struct s_game
 {
+	t_colors *colors;
 	char	*map_name;
 	int		fd;
 	char	**map;
