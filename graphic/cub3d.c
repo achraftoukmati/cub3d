@@ -6,7 +6,7 @@
 /*   By: atoukmat <atoukmat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 22:12:00 by atoukmat          #+#    #+#             */
-/*   Updated: 2024/02/02 20:54:27 by atoukmat         ###   ########.fr       */
+/*   Updated: 2024/02/03 17:01:35 by atoukmat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,6 @@ void start_game(t_data *data)
 {
     data->mlx->mlx = mlx_init(S_W, S_H, "cub", false);
     data->mlx->img = mlx_new_image(data->mlx->mlx, S_W, S_H);
-    // data->mlx->wall = NULL;
     init_mlx(data->mlx,data->map);
     mlx_loop_hook(data->mlx->mlx,game_loop,data);
     mlx_loop_hook(data->mlx->mlx,escape,data);

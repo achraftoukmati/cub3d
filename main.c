@@ -6,7 +6,7 @@
 /*   By: atoukmat <atoukmat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 22:12:05 by atoukmat          #+#    #+#             */
-/*   Updated: 2024/02/02 20:39:03 by atoukmat         ###   ########.fr       */
+/*   Updated: 2024/02/03 17:07:16 by atoukmat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,10 +74,10 @@ int init_map(t_map *data , t_game *ayoub)
     data->map_height = max_h(data->map);
     data->map_width = max_w(data->map);
     data->unit = 80;
-    data->ea = ft_strdup( ayoub->EA_s[1]);
-    data->no = ft_strdup(ayoub->NO_s[1]);
-    data->so = ft_strdup(ayoub->SO_s[1]);
-    data->we = ft_strdup(ayoub->WE_s[1]);
+    data->ea = ayoub->EA_s[1];
+    data->no = ayoub->NO_s[1];
+    data->so = ayoub->SO_s[1];
+    data->we = ayoub->WE_s[1];
     data->angle = 0.0f;
     return (0);
 }
@@ -125,7 +125,10 @@ void exiting(t_data *data,int var)
     mlx_delete_image(data->mlx->mlx, data->mlx->img);
     mlx_close_window(data->mlx->mlx);
     mlx_terminate(data->mlx->mlx);
-    mlx_delete_texture(data->mlx->wall);
+    mlx_delete_texture(data->mlx->EA);
+    mlx_delete_texture(data->mlx->SO);
+    mlx_delete_texture(data->mlx->NO);
+    mlx_delete_texture(data->mlx->WE);
     free_all(data);
     leaks_();
     if(var != ERROR)

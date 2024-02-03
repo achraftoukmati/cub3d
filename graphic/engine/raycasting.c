@@ -6,7 +6,7 @@
 /*   By: atoukmat <atoukmat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 22:14:30 by atoukmat          #+#    #+#             */
-/*   Updated: 2024/02/02 20:57:52 by atoukmat         ###   ########.fr       */
+/*   Updated: 2024/02/03 17:02:45 by atoukmat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -137,19 +137,12 @@ mlx_texture_t *get_wall_texture(t_rays *ray,t_mlx *mlx)
     {
         if(sin(ray->angle) > 0)
             return mlx->SO;
-        else
-            return mlx->EA;
+        return mlx->EA;
     
     }
-    else
-    {
-        if(cos(ray->angle) > 0)
-            return mlx->NO;
-        else
-            return mlx->WE;
-    }
-    
-    
+    if(cos(ray->angle) > 0)
+        return mlx->NO;
+    return mlx->WE;
 }
 
 void stream_camera(t_data *data, t_rays *ray)
@@ -167,10 +160,10 @@ void stream_camera(t_data *data, t_rays *ray)
         data->vars->offset_x = (int)ray->y % data->map->unit;
     else 
         data->vars->offset_x = (int)ray->x % data->map->unit;
+    data->mlx->wall = get_wall_texture(ray,data->mlx);
     while(data->vars->start_pix < data->vars->end_pix)
     {
         int distance_from_top = (int)data->vars->start_pix - ((S_H / 2) - (data->vars->strip_wall_h / 2));
-        data->mlx->wall = get_wall_texture(ray,data->mlx);
         data->vars->offset_y = distance_from_top * ((float)data->mlx->wall->height / data->vars->strip_wall_h);
         int color = get_color_at_position(data->mlx->wall, data->vars->offset_x, data->vars->offset_y);
         mlx_put_pixel(data->mlx->img, ray->ray_id, data->vars->start_pix, color);
