@@ -6,7 +6,7 @@
 /*   By: atoukmat <atoukmat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 22:12:05 by atoukmat          #+#    #+#             */
-/*   Updated: 2024/02/03 17:07:16 by atoukmat         ###   ########.fr       */
+/*   Updated: 2024/02/03 17:11:34 by atoukmat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,13 +100,6 @@ void leaks_()
 
 void free_all(t_data *data)
 {
-    int i = 0;
-    // while(data->map->map[i])
-    // {
-    //     free(data->map->map[i]);
-    //     i++;
-    // }
-    // free(data->map->map);
     if(data->map)
         free(data->map);
     if(data->player->rays)
@@ -119,8 +112,7 @@ void free_all(t_data *data)
         free(data->vars);
 }
 
-
-void exiting(t_data *data,int var)
+void mlx_end(t_data *data)
 {
     mlx_delete_image(data->mlx->mlx, data->mlx->img);
     mlx_close_window(data->mlx->mlx);
@@ -129,6 +121,11 @@ void exiting(t_data *data,int var)
     mlx_delete_texture(data->mlx->SO);
     mlx_delete_texture(data->mlx->NO);
     mlx_delete_texture(data->mlx->WE);
+}
+
+void exiting(t_data *data,int var)
+{
+    mlx_end(data);
     free_all(data);
     leaks_();
     if(var != ERROR)
