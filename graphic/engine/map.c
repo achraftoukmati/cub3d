@@ -6,7 +6,7 @@
 /*   By: atoukmat <atoukmat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 22:20:20 by atoukmat          #+#    #+#             */
-/*   Updated: 2024/02/02 02:39:35 by atoukmat         ###   ########.fr       */
+/*   Updated: 2024/02/06 17:49:32 by atoukmat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,9 @@ void fill_map(t_data *data)
         while(j < S_H )
         {
             if(j <( S_H / 2))
-                mlx_put_pixel(data->mlx->img,i,j,BLACK);
+                mlx_put_pixel(data->mlx->img,i,j,data->mlx->floor);
             else
-                mlx_put_pixel(data->mlx->img,i,j,GRAY);
+                mlx_put_pixel(data->mlx->img,i,j,data->mlx->celling);
             j++;
         }
         i++;

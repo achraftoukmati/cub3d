@@ -6,7 +6,7 @@
 /*   By: atoukmat <atoukmat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 21:58:07 by atoukmat          #+#    #+#             */
-/*   Updated: 2024/02/02 20:41:45 by atoukmat         ###   ########.fr       */
+/*   Updated: 2024/02/06 17:35:06 by atoukmat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,8 @@ typedef struct  s_mlx
     mlx_texture_t *SO;
     mlx_texture_t *WE;
     mlx_texture_t *EA;
+    int floor;
+    int celling;
     
 } t_mlx;
 

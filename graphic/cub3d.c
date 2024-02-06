@@ -6,7 +6,7 @@
 /*   By: atoukmat <atoukmat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 22:12:00 by atoukmat          #+#    #+#             */
-/*   Updated: 2024/02/03 17:01:35 by atoukmat         ###   ########.fr       */
+/*   Updated: 2024/02/06 17:37:02 by atoukmat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,13 +37,10 @@ void escape(void *data)
 int init_mlx(t_mlx *mlx,t_map *map)
 {
     mlx->EA = mlx_load_png(map->ea);
-    printf("|%s|\n",map->ea);
     mlx->NO = mlx_load_png(map->no);
-    printf("|%s|\n",map->no);
     mlx->SO = mlx_load_png(map->so);
-    printf("|%s|\n",map->so);
     mlx->WE = mlx_load_png( map->we);
-    printf("|%s|\n",map->we);
+    
     return 0;
 }
 

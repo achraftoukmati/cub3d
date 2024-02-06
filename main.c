@@ -6,7 +6,7 @@
 /*   By: atoukmat <atoukmat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 22:12:05 by atoukmat          #+#    #+#             */
-/*   Updated: 2024/02/03 17:11:34 by atoukmat         ###   ########.fr       */
+/*   Updated: 2024/02/06 17:51:29 by atoukmat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,16 +60,7 @@ int max_h(char **map)
 // }
 
 int init_map(t_map *data , t_game *ayoub)
-{    
-
-    // data->map = ayoub->map;
-    int i = 0;
-    while(ayoub->map_ptr[i])
-    {
-        printf("%s %d \n",ayoub->map_ptr[i],ayoub->map_ptr[i][0]);
-        i++;
-    }
-    printf("%s\n",ayoub->SO);
+{
     data->map = ayoub->map_ptr;
     data->map_height = max_h(data->map);
     data->map_width = max_w(data->map);
@@ -89,6 +80,9 @@ int init(t_data *data , t_game *ayoub)
     data->player = malloc(sizeof(t_player));
     init_player(data);
     data->mlx = malloc(sizeof(t_mlx));
+    // printf("f = %d %d %d \n c = %d %d %d\n",ft_atoi(ayoub->F_s[0 +1]),ft_atoi(ayoub->F_s[1+1]),ft_atoi(ayoub->F_s[2+1]),ft_atoi(ayoub->C_s[0+1]),ft_atoi(ayoub->C_s[1+1]),ft_atoi(ayoub->C_s[2+1]));
+    data->mlx->celling = get_rgba(ft_atoi(ayoub->F_s[1]),ft_atoi(ayoub->F_s[2]),ft_atoi(ayoub->F_s[3]),0);
+    data->mlx->floor = get_rgba(ft_atoi(ayoub->C_s[1]),ft_atoi(ayoub->C_s[2]),ft_atoi(ayoub->C_s[3]),1);;
     data->vars = malloc(sizeof(t_rays));
     return 0;
 }
@@ -139,9 +133,7 @@ int main(int ac, char **av)
 	int		i;
 
 	if (ac != 2)
-	{
 		ft_rr("UNVALID_INPUT 😨\n");
-	}
     t_data data;
 	glo.map_name = av[1];
 	cub_all(&glo);
