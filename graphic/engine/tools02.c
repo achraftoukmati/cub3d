@@ -6,7 +6,7 @@
 /*   By: atoukmat <atoukmat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 18:26:13 by atoukmat          #+#    #+#             */
-/*   Updated: 2024/02/08 18:35:51 by atoukmat         ###   ########.fr       */
+/*   Updated: 2024/02/08 18:40:07 by atoukmat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ int	max_w(char **map)
 	i = 0;
 	while (map[i])
 	{
-		if (ft_strlen(map[i]) > w)
+		if ((int)ft_strlen(map[i]) > w)
 			w = ft_strlen(map[i]);
 		i++;
 	}

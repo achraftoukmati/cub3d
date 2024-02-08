@@ -4,7 +4,7 @@ SRC = main.c ./graphic/engine/initializing.c ./graphic/engine/tools02.c ./graphi
 
 CC = cc
 
-CFLAGS =# -fsanitize=address -g
+CFLAGS = -Wall -Wextra -Werror
 
 OBJS = ${SRC:.c=.o}
 
