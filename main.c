@@ -6,7 +6,7 @@
 /*   By: atoukmat <atoukmat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 22:12:05 by atoukmat          #+#    #+#             */
-/*   Updated: 2024/02/06 17:51:29 by atoukmat         ###   ########.fr       */
+/*   Updated: 2024/02/07 15:45:16 by atoukmat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int init_player(t_data *data)
     data->player->rotation_angel = M_PI / 2;
     data->player->walk_diraction = 0;
     data->player->turn_diraction = 0;
-    data->player->rotation_speed = 5 * (M_PI / 180);
+    data->player->rotation_speed = 2 * (M_PI / 180);
     data->player->FOV_angle = 60 * (M_PI / 180);
     data->player->wall_strip_width = 1;
     data->player->num_rays = S_W;

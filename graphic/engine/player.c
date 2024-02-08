@@ -6,7 +6,7 @@
 /*   By: atoukmat <atoukmat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 22:23:57 by atoukmat          #+#    #+#             */
-/*   Updated: 2024/02/02 18:36:06 by atoukmat         ###   ########.fr       */
+/*   Updated: 2024/02/08 17:06:25 by atoukmat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,14 +40,14 @@ void update_player(t_data *data)
 {
     key_press(data);
     data->player->rotation_angel += data->player->turn_diraction * data->player->rotation_speed;
-    int move_step = data->player->walk_diraction * data->player->move_speed;
-    int strafe_step = data->player->walk_lr_diraction * data->player->move_speed;
-    float n_x = data->player->player_x + (move_step * cos(data->player->rotation_angel)) + (strafe_step * cos(data->player->rotation_angel + M_PI/2)); 
-    float n_y = data->player->player_y + (move_step * sin(data->player->rotation_angel)) + (strafe_step * sin(data->player->rotation_angel + M_PI/2));
-    if (has_wall_at(data, n_x, n_y)) 
+    data->player->move_step = data->player->walk_diraction * data->player->move_speed;
+    data->player->strafe_step = data->player->walk_lr_diraction * data->player->move_speed;
+    data->player->n_x = data->player->player_x + (data->player->move_step * cos(data->player->rotation_angel)) + (data->player->strafe_step * cos(data->player->rotation_angel + M_PI/2)); 
+    data->player->n_y = data->player->player_y + (data->player->move_step * sin(data->player->rotation_angel)) + (data->player->strafe_step * sin(data->player->rotation_angel + M_PI/2));
+    if (has_wall_at(data, data->player->n_x, data->player->n_y)) 
     {
-        data->player->player_x = n_x;
-        data->player->player_y = n_y;
+        data->player->player_x = data->player->n_x;
+        data->player->player_y = data->player->n_y;
     }
     // mlx_circle(data->mlx->img,data->player->player_x,data->player->player_y,data->player->radius);
     // mlx_line(data->mlx->img, data->player->player_x, data->player->player_y, data->player->player_x + cos(data->player->rotation_angel) * 50, data->player->player_y + sin(data->player->rotation_angel) * 50, RED);

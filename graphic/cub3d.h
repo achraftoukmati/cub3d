@@ -6,7 +6,7 @@
 /*   By: atoukmat <atoukmat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 21:58:07 by atoukmat          #+#    #+#             */
-/*   Updated: 2024/02/06 17:35:06 by atoukmat         ###   ########.fr       */
+/*   Updated: 2024/02/08 17:05:14 by atoukmat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 # include <unistd.h>
 # include <math.h>
 #include "../mlx/MLX42/MLX42.h" // include the mlx library
-# define S_W 1900 // screen width
+# define S_W 2000 // screen width
 # define S_H 1000 // screen height
 
 // # define M_PI 3.14159265358979323846
@@ -112,6 +112,10 @@ typedef struct s_player {
     float FOV_angle;
     int num_rays;
     int wall_strip_width;
+    int move_step;
+    int strafe_step;
+    float n_x;
+    float n_y;
     t_rays *rays;
 } t_player;
 

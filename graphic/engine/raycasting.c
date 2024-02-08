@@ -6,7 +6,7 @@
 /*   By: atoukmat <atoukmat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 22:14:30 by atoukmat          #+#    #+#             */
-/*   Updated: 2024/02/03 17:02:45 by atoukmat         ###   ########.fr       */
+/*   Updated: 2024/02/08 17:17:49 by atoukmat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,13 @@ int unit_circle(float angle, char c)
  return (0);
 }
 
-int inter_check(float angle, float *inter, float *step, int is_horizon ,int TILE_SIZE)
+int inter_check(float angle, float *inter, float *step, int is_horizon ,int unit)
 {
  if (is_horizon)
  {
   if (angle > 0 && angle < M_PI)
   {
-   *inter += TILE_SIZE;
+   *inter += unit;
    return (-1);
   }
   *step *= -1;
@@ -42,7 +42,7 @@ int inter_check(float angle, float *inter, float *step, int is_horizon ,int TILE
  {
   if (!(angle > M_PI / 2 && angle < 3 * M_PI / 2)) 
   {
-   *inter += TILE_SIZE;
+   *inter += unit;
    return (-1);
   }
   *step *= -1;
@@ -52,61 +52,46 @@ int inter_check(float angle, float *inter, float *step, int is_horizon ,int TILE
 
 t_intersection get_h_inter(t_data *data, t_rays *ray) 
 {
- float h_x;
- float h_y;
+
+t_intersection intersection = {0};
  float x_step;
  float y_step;
  int  pixel;
-        int TILE_SIZE = data->map->unit;
-    t_intersection intersection = {0};
-
-float angl = ray->angle;
- y_step = TILE_SIZE;
- x_step = TILE_SIZE / tan(angl);
- float variable = data->player->player_x;
- h_y = floor(data->player->player_y / TILE_SIZE) * TILE_SIZE;
- pixel = inter_check(angl, &h_y, &y_step, 1,TILE_SIZE);
- h_x = data->player->player_x + (h_y - data->player->player_y) / tan(angl);
- if ((unit_circle(angl, 'y') && x_step > 0) || (!unit_circle(angl, 'y') && x_step < 0))
+ y_step = data->map->unit;
+ x_step = data->map->unit / tan(ray->angle);
+  intersection.y_intercept = floor(data->player->player_y / data->map->unit) * data->map->unit;
+ pixel = inter_check(ray->angle, & intersection.y_intercept, &y_step, 1,data->map->unit);
+  intersection.x_intercept = data->player->player_x + ( intersection.y_intercept - data->player->player_y) / tan(ray->angle);
+ if ((unit_circle(ray->angle, 'y') && x_step > 0) || (!unit_circle(ray->angle, 'y') && x_step < 0))
   x_step *= -1;
- while (has_wall_at(data,h_x, h_y - pixel)) 
+ while (has_wall_at(data, intersection.x_intercept,  intersection.y_intercept - pixel)) 
  {
-  h_x += x_step;
-  h_y += y_step;
+   intersection.x_intercept += x_step;
+   intersection.y_intercept += y_step;
  }
- intersection.x_intercept = h_x;
-intersection.y_intercept = h_y;
- intersection.distance = sqrt(pow(h_x - data->player->player_x, 2) + pow(h_y - data->player->player_y, 2));
+ intersection.distance = sqrt(pow( intersection.x_intercept - data->player->player_x, 2) + pow( intersection.y_intercept - data->player->player_y, 2));
  return(intersection);
 }
 
 t_intersection get_v_inter(t_data *data, t_rays *ray)
 {
- float v_x;
- float v_y;
  float x_step;
  float y_step;
  int  pixel;
-int TILE_SIZE = data->map->unit;
 t_intersection intersection = {0};
-
-float angl = ray->angle;
- x_step = TILE_SIZE; 
- y_step = TILE_SIZE * tan(angl);
- v_x = floor(data->player->player_x / TILE_SIZE) * TILE_SIZE;
- float variable = data->player->player_x;
- pixel = inter_check(angl, &v_x, &x_step, 0,TILE_SIZE); 
- v_y = data->player->player_y + (v_x - data->player->player_x) * tan(angl);
- if ((unit_circle(angl, 'x') && y_step < 0) || (!unit_circle(angl, 'x') && y_step > 0))
+ x_step = data->map->unit; 
+ y_step = data->map->unit * tan(ray->angle);
+ intersection.x_intercept = floor(data->player->player_x / data->map->unit) * data->map->unit;
+ pixel = inter_check(ray->angle, &intersection.x_intercept, &x_step, 0,data->map->unit); 
+ intersection.y_intercept = data->player->player_y + (intersection.x_intercept - data->player->player_x) * tan(ray->angle);
+ if ((unit_circle(ray->angle, 'x') && y_step < 0) || (!unit_circle(ray->angle, 'x') && y_step > 0))
   y_step *= -1;
- while (has_wall_at(data,v_x - pixel, v_y))
+ while (has_wall_at(data,intersection.x_intercept - pixel, intersection.y_intercept))
  {
-  v_x += x_step;
-  v_y += y_step;
+  intersection.x_intercept += x_step;
+  intersection.y_intercept += y_step;
  }
-intersection.x_intercept = v_x;
-intersection.y_intercept = v_y;
- intersection.distance =  sqrt(pow(v_x - data->player->player_x, 2) + pow(v_y - data->player->player_y, 2));
+ intersection.distance =  sqrt(pow(intersection.x_intercept - data->player->player_x, 2) + pow(intersection.y_intercept - data->player->player_y, 2));
  return intersection;
 }
 

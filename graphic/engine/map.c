@@ -6,7 +6,7 @@
 /*   By: atoukmat <atoukmat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 22:20:20 by atoukmat          #+#    #+#             */
-/*   Updated: 2024/02/06 17:49:32 by atoukmat         ###   ########.fr       */
+/*   Updated: 2024/02/08 17:02:46 by atoukmat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void fill_map(t_data *data)
 }
 void update_map(t_data *data)
 {
-    int idx = 0;
+    // int idx = 0;
    
     mlx_delete_image(data->mlx->mlx, data->mlx->img); // delete the image
     data->mlx->img = mlx_new_image(data->mlx->mlx, S_W, S_H);
