@@ -1,3 +1,2 @@
 # cub3d
-runs with :
-$> make && ./cub
+Usage: $> make && ./Cub3d <path_to_the_map>
