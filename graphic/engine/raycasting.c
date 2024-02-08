@@ -6,7 +6,7 @@
 /*   By: atoukmat <atoukmat@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 22:14:30 by atoukmat          #+#    #+#             */
-/*   Updated: 2024/02/08 17:17:49 by atoukmat         ###   ########.fr       */
+/*   Updated: 2024/02/08 17:24:53 by atoukmat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,20 +54,18 @@ t_intersection get_h_inter(t_data *data, t_rays *ray)
 {
 
 t_intersection intersection = {0};
- float x_step;
- float y_step;
  int  pixel;
- y_step = data->map->unit;
- x_step = data->map->unit / tan(ray->angle);
-  intersection.y_intercept = floor(data->player->player_y / data->map->unit) * data->map->unit;
- pixel = inter_check(ray->angle, & intersection.y_intercept, &y_step, 1,data->map->unit);
+ intersection.y_step = data->map->unit;
+ intersection.x_step = data->map->unit / tan(ray->angle);
+intersection.y_intercept = floor(data->player->player_y / data->map->unit) * data->map->unit;
+ pixel = inter_check(ray->angle, & intersection.y_intercept, &intersection.y_step, 1,data->map->unit);
   intersection.x_intercept = data->player->player_x + ( intersection.y_intercept - data->player->player_y) / tan(ray->angle);
- if ((unit_circle(ray->angle, 'y') && x_step > 0) || (!unit_circle(ray->angle, 'y') && x_step < 0))
-  x_step *= -1;
+ if ((unit_circle(ray->angle, 'y') && intersection.x_step > 0) || (!unit_circle(ray->angle, 'y') && intersection.x_step < 0))
+  intersection.x_step *= -1;
  while (has_wall_at(data, intersection.x_intercept,  intersection.y_intercept - pixel)) 
  {
-   intersection.x_intercept += x_step;
-   intersection.y_intercept += y_step;
+   intersection.x_intercept += intersection.x_step;
+   intersection.y_intercept += intersection.y_step;
  }
  intersection.distance = sqrt(pow( intersection.x_intercept - data->player->player_x, 2) + pow( intersection.y_intercept - data->player->player_y, 2));
  return(intersection);
@@ -75,21 +73,19 @@ t_intersection intersection = {0};
 
 t_intersection get_v_inter(t_data *data, t_rays *ray)
 {
- float x_step;
- float y_step;
  int  pixel;
 t_intersection intersection = {0};
- x_step = data->map->unit; 
- y_step = data->map->unit * tan(ray->angle);
+ intersection.x_step = data->map->unit; 
+ intersection.y_step = data->map->unit * tan(ray->angle);
  intersection.x_intercept = floor(data->player->player_x / data->map->unit) * data->map->unit;
- pixel = inter_check(ray->angle, &intersection.x_intercept, &x_step, 0,data->map->unit); 
+ pixel = inter_check(ray->angle, &intersection.x_intercept, &intersection.x_step, 0,data->map->unit); 
  intersection.y_intercept = data->player->player_y + (intersection.x_intercept - data->player->player_x) * tan(ray->angle);
- if ((unit_circle(ray->angle, 'x') && y_step < 0) || (!unit_circle(ray->angle, 'x') && y_step > 0))
-  y_step *= -1;
+ if ((unit_circle(ray->angle, 'x') && intersection.y_step < 0) || (!unit_circle(ray->angle, 'x') && intersection.y_step > 0))
+  intersection.y_step *= -1;
  while (has_wall_at(data,intersection.x_intercept - pixel, intersection.y_intercept))
  {
-  intersection.x_intercept += x_step;
-  intersection.y_intercept += y_step;
+  intersection.x_intercept += intersection.x_step;
+  intersection.y_intercept += intersection.y_step;
  }
  intersection.distance =  sqrt(pow(intersection.x_intercept - data->player->player_x, 2) + pow(intersection.y_intercept - data->player->player_y, 2));
  return intersection;
