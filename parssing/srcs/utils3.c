@@ -6,7 +6,7 @@
 /*   By: alotfi <alotfi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 13:00:51 by alotfi            #+#    #+#             */
-/*   Updated: 2024/01/19 10:14:22 by alotfi           ###   ########.fr       */
+/*   Updated: 2024/02/13 15:09:51 by alotfi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,10 +49,21 @@ void	splited_ptrs(t_game *glo)
 	glo->F_s = ft_split(glo->F, 32, ',');
 	glo->C_s = ft_split(glo->C, 32, ',');
 }
+void syntax_check03(t_game *glo)
+{
+	splited_ptrs(glo);
+
+	if (!ft_strnstr(glo->NO_s[1], ".png", ft_strlen(glo->NO_s[1]))
+		|| !ft_strnstr(glo->SO_s[1], ".png", ft_strlen(glo->SO_s[1]))
+		|| !ft_strnstr(glo->WE_s[1], ".png", ft_strlen(glo->WE_s[1]))
+		|| !ft_strnstr(glo->EA_s[1], ".png", ft_strlen(glo->EA_s[1])))
+		ft_rr("PNG FORMAT ONLY \n");
+}
 
 void	syntax_check(t_game *glo)
 {
 	splited_ptrs(glo);
+	
 	if (table_counter(glo->NO_s) != 2 || table_counter(glo->SO_s) != 2
 		|| table_counter(glo->WE_s) != 2 || table_counter(glo->EA_s) != 2)
 		ft_rr("SYNTAX_ERROR ❌\n");
@@ -71,6 +82,7 @@ void	syntax_check(t_game *glo)
 		ft_rr("SYNTAX_ERROR ❌\n");
 	// syntax_check2(glo);
 	ptr_check(glo);
+	// syntax_check03(glo);
 }
 
 void	syntax_check2(t_game *glo)
