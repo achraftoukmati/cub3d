@@ -6,7 +6,7 @@
 /*   By: alotfi <alotfi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 21:49:19 by alotfi            #+#    #+#             */
-/*   Updated: 2024/01/19 10:08:04 by alotfi           ###   ########.fr       */
+/*   Updated: 2024/02/17 17:08:19 by alotfi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,8 +59,8 @@ void	get_map(t_game *glo)
 	int	i;
 
 	i = 0;
-	while (glo->map[i] && !ft_strnstr(glo->map[i], "111",
-			ft_strlen(glo->map[i])))
+	while (glo->map[i] && !ft_strnstr(glo->map[i], "111",ft_strlen(glo->map[i])))
+	// while(glo->map[i] && one_only_one(glo->map[i]) == 0)
 		i++;
 	if (glo->map[i] == NULL)
 		ft_rr("I_THINK_YOU_FORGOT_A_MAP 🤓\n");
@@ -94,7 +94,7 @@ void	get_ptrs(t_game *glo)
 		ps.i++;
 	}
 	if (ps.ea_c != 1 || ps.f_c != 1 || ps.c_c != 1)
-		ft_rr("NOT_A_VALID_PATH ❌\n");
+		ft_rr("NOT_A_VALID_PATH1 ❌\n");
 	glo->map_ptr = glo->map;
 }
 
@@ -123,6 +123,6 @@ void	get_ptrs2(t_game *glo)
 		ph.i++;
 	}
 	if (ph.no_c != 1 || ph.so_c != 1 || ph.we_c != 1)
-		ft_rr("NOT_A_VALID_PATH ❌\n");
+		ft_rr("NOT_A_VALID_PATH4 ❌\n");
 	get_map(glo);
 }

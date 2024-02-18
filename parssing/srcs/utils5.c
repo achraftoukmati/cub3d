@@ -3,15 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   utils5.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: atoukmat <atoukmat@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alotfi <alotfi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 13:02:28 by alotfi            #+#    #+#             */
-/*   Updated: 2024/02/02 17:04:01 by atoukmat         ###   ########.fr       */
+/*   Updated: 2024/02/18 15:17:43 by alotfi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/cub3d.h"
 
+void cpp(t_game *glo);
 void	ft_check_map(t_game *glo)
 {
 	int	i;
@@ -35,6 +36,24 @@ void	ft_check_map(t_game *glo)
 	}
 	if (flag == 0)
 		ft_rr("I_THINK_YOU_FORGOT_THE_PLAYER ❌\n");
+	cpp(glo);
+}
+
+void cpp(t_game *glo)
+{
+	int i = 0;
+	int j = 0;
+	
+	while (glo->map_ptr[i])
+	{	j = 0;
+		while (glo->map_ptr[i][j])
+		{
+			if (!ft_strchr("NSWE01 ", glo->map_ptr[i][j]))
+				ft_rr("RAMZI\n");
+			j++;
+		}
+		i++;
+	}
 }
 
 void	ft_check_map2(t_game *glo)
@@ -82,7 +101,7 @@ void	check_under_zero(t_game *glo)
 				w = j;
 				if (glo->map_ptr[i + 1][w] == 32 || glo->map_ptr[i
 					- 1][w] == 32)
-					ft_rr("NOT_A_VALID_PATH ❌\n");
+					ft_rr("NOT_A_VALID_PATH3 ❌\n");
 			}
 			j++;
 		}
@@ -95,6 +114,7 @@ void	cub_all(t_game *glo)
 	read_map(glo);
 	get_ptrs(glo);
 	get_ptrs2(glo);
+	check_pp(glo);
 	check_map(glo);
 	syntax_check(glo);
 	ft_check_map(glo);

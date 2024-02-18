@@ -6,13 +6,15 @@
 /*   By: alotfi <alotfi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 16:53:26 by alotfi            #+#    #+#             */
-/*   Updated: 2024/02/13 14:33:43 by alotfi           ###   ########.fr       */
+/*   Updated: 2024/02/17 17:31:14 by alotfi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+// #include "../headers/cub3d.h"
+
 #include "../headers/cub3d.h"
 
-void check_pp1(t_game *glo);
+
 
 void check_pp(t_game *glo)
 {
@@ -27,7 +29,7 @@ void check_pp(t_game *glo)
         {
             if(!ft_strchr("NSWEFC1 ", glo->map[i][0]))
             {
-                printf("---->OK<-----\n");
+                printf("---->OOK<-----\n");
                 exit(1);
             }
             j++;
@@ -35,6 +37,7 @@ void check_pp(t_game *glo)
         i++;
     }
     check_pp1(glo);
+    play_pos(glo);
 }
 
 int one_only_one(char *str )
@@ -43,12 +46,53 @@ int one_only_one(char *str )
 
     while(str && str[i])
     {
-        if(str[i] == '1' || str[i] == ' ')
+        if(str[i] == '1' || str[i] == 32)
             i++;
         else 
         return 1;
     }
     return 0;
+}
+
+int ft_plyer_poss(char *s)
+{
+    int i = 0;
+
+    while(s && s[i])
+    {
+        if(s[i] == 'S' || s[i] == 'W' || s[i] == 'P' || s[i] == 'N' || s[i] == '0')
+        {
+            if(s[i + 1] == 32 || s[i - 1] == 32)
+            return 1;
+        }
+        i++;
+    }
+    return 0;
+}
+
+void play_pos(t_game *glo)
+{
+    int i = 0;
+    int j = 0;
+    int w = 0;
+    
+    while(glo->map_ptr[i])
+    {
+        j = 0;
+        while(glo->map_ptr[i][j])
+        {
+            if(ft_plyer_poss(&glo->map_ptr[i][j]) == 1 )
+                ft_rr("NOT_A_VALID_PATH3 ❌\n");
+            if(ft_strchr("WSEN0", glo->map_ptr[i][j]))
+            {
+                w = j;
+                if(ft_strchr(" ", glo->map_ptr[i - 1][w]) || ft_strchr(" ", glo->map_ptr[i + 1][w]))
+                    ft_rr("NOT_A_VALID_PATH2 ❌\n");
+            }
+            j++;
+        }
+        i++;
+    }
 }
 
 void check_pp1(t_game *glo)
@@ -62,11 +106,11 @@ void check_pp1(t_game *glo)
         j = 0;
         while(glo->map[i][j])
         {
-            if(ft_strchr("1", glo->map[i][0]))
+            if(ft_strchr("1", glo->map[i][0]) || ft_strchr(" ", glo->map[i][0])|| ft_strchr("   ", glo->map[i][0]))
             {
-                if(one_only_one(&glo->map[i][j]) == 1 && flag != 1)
+                if((one_only_one(&glo->map[i][j]) == 1 && flag != 1))
                 {
-                    printf("---->OK<-----\n");
+                    printf("---->OKK<-----\n");
                     exit(1);
                 }
                 if(ft_strchr("111", glo->map[i][j]))
@@ -76,4 +120,7 @@ void check_pp1(t_game *glo)
         }
         i++;
     }
+
 }
+//9lb 3la awl str 3amer wahdat
+// nd map matkonch fiha smtg mn ghir SWPN01 

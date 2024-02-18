@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: atoukmat <atoukmat@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alotfi <alotfi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 17:40:16 by alotfi            #+#    #+#             */
-/*   Updated: 2024/02/03 18:25:14 by atoukmat         ###   ########.fr       */
+/*   Updated: 2024/02/17 17:14:20 by alotfi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,3 +114,11 @@ void chkeck_player(t_game *glo);
 
 // ERROR CHECK
 void ft_rr(char *str);
+
+
+
+int one_only_one(char *str );
+void check_pp1(t_game *glo);
+void play_pos(t_game *glo);
+int ft_strcmp(char *s1, char *s2);
+void check_pp(t_game *glo);

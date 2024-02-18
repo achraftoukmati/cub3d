@@ -6,7 +6,7 @@
 /*   By: alotfi <alotfi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 15:16:35 by alotfi            #+#    #+#             */
-/*   Updated: 2024/01/19 10:14:15 by alotfi           ###   ########.fr       */
+/*   Updated: 2024/02/17 16:18:10 by alotfi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,16 +27,16 @@ void	check_map(t_game *glo)
 	{
 		if (ft_fchecker(glo->map_ptr[i], '1', 32) == 1
 			|| ft_fchecker(glo->map_ptr[j - 1], '1', 32) == 1)
-			ft_rr("UNVALID_MAP \n");
+			ft_rr("UNVALID_MAP1 \n");
 		i++;
 	}
 	while (glo->map_ptr[w])
 	{
 		if (weet(glo->map_ptr[w]) == 0 || weet2(glo->map_ptr[w]) == 0
 			|| f_check(glo->map_ptr[w]) == 1)
-			ft_rr("UNVALID_MAP \n");
+			ft_rr("UNVALID_MAP2 \n");
 		if (f_check1(glo->map_ptr[w]) == 1 || f_check2(glo->map_ptr[w]) == 1)
-			ft_rr("UNVALID_MAP \n");
+			ft_rr("UNVALID_MAP3 \n");
 		w++;
 	}
 }

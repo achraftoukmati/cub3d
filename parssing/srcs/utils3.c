@@ -6,7 +6,7 @@
 /*   By: alotfi <alotfi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 13:00:51 by alotfi            #+#    #+#             */
-/*   Updated: 2024/02/13 15:09:51 by alotfi           ###   ########.fr       */
+/*   Updated: 2024/02/17 17:29:17 by alotfi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,17 +72,13 @@ void	syntax_check(t_game *glo)
 	if (kama(glo->F) == 1 || kama(glo->C) == 1 || ft_kama(glo->C) == 1
 		|| ft_kama(glo->F) == 1)
 		ft_rr("SYNTAX_ERROR ❌\n");
-	if (!ft_strnstr(glo->NO_s[0], "NO", ft_strlen(glo->NO_s[0]))
-		|| !ft_strnstr(glo->SO_s[0], "SO", ft_strlen(glo->SO_s[0]))
-		|| !ft_strnstr(glo->WE_s[0], "WE", ft_strlen(glo->WE_s[0]))
-		|| !ft_strnstr(glo->EA_s[0], "EA", ft_strlen(glo->EA_s[0])))
-		ft_rr("SYNTAX_ERROR ❌\n");
-	if (!ft_strnstr(glo->F_s[0], "F", ft_strlen(glo->F_s[0]))
-		|| !ft_strnstr(glo->C_s[0], "C", ft_strlen(glo->C_s[0])))
-		ft_rr("SYNTAX_ERROR ❌\n");
+	if (ft_strcmp(glo->NO_s[0], "NO")|| ft_strcmp(glo->SO_s[0], "SO")|| ft_strcmp(glo->WE_s[0], "WE")|| ft_strcmp(glo->EA_s[0], "EA"))
+		ft_rr("SYNTAX_ERROR1 ❌\n");
+	if (ft_strcmp(glo->F_s[0], "F")|| ft_strcmp(glo->C_s[0], "C"))
+		ft_rr("SYNTAX_ERROR2 ❌\n");
 	// syntax_check2(glo);
 	ptr_check(glo);
-	// syntax_check03(glo);
+	syntax_check03(glo);
 }
 
 void	syntax_check2(t_game *glo)
@@ -116,4 +112,20 @@ void	ptr_check(t_game *glo)
 			&& ft_atoi(glo->C_s[2]) <= 255 && ft_atoi(glo->C_s[3]) <= 255))
 		ft_rr("DO_NOT_EXCEED_255 ❌\n");
 	weet3(glo);
+}
+
+int ft_strcmp(char *s1, char *s2)
+{
+    int i = 0;
+    int j = 0;
+
+    while(s1[i] && s2[i] && s1[i] == s2[i])
+    {
+        i++;
+        j++;
+    }
+    if(s1[i] == s2[i])
+        return 0;
+    else 
+        return 1;
 }
