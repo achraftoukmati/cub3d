@@ -6,7 +6,7 @@
 /*   By: alotfi <alotfi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 13:02:28 by alotfi            #+#    #+#             */
-/*   Updated: 2024/02/18 15:31:59 by alotfi           ###   ########.fr       */
+/*   Updated: 2024/02/18 18:11:57 by alotfi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,9 +114,9 @@ void	cub_all(t_game *glo)
 	read_map(glo);
 	get_ptrs(glo);
 	get_ptrs2(glo);
+	check_map(glo);
 	check_pp(glo);
 	check_under_zero(glo);
-	check_map(glo);
 	syntax_check(glo);
 	ft_check_map(glo);
 	valid_path(glo);
