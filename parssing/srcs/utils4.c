@@ -6,7 +6,7 @@
 /*   By: alotfi <alotfi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 13:04:41 by alotfi            #+#    #+#             */
-/*   Updated: 2024/02/18 16:13:52 by alotfi           ###   ########.fr       */
+/*   Updated: 2024/02/18 16:23:07 by alotfi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -125,6 +125,19 @@ int ger(char *str)
 	while(str && str[i])
 	{
 		if(str[i] == '1')
+			i++;
+		else 
+		return 1;
+	}
+	return 0;
+}
+int ger1(char *str)
+{
+	int i = 0;
+
+	while(str && str[i])
+	{
+		if(str[i] == '1' || str[i] == 32)
 			i++;
 		else 
 		return 1;

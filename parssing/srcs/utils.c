@@ -6,7 +6,7 @@
 /*   By: alotfi <alotfi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 21:49:19 by alotfi            #+#    #+#             */
-/*   Updated: 2024/02/18 16:15:30 by alotfi           ###   ########.fr       */
+/*   Updated: 2024/02/18 16:23:29 by alotfi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,8 +59,8 @@ void	get_map(t_game *glo)
 	int	i;
 
 	i = 0;
-	while (glo->map[i] && !ft_strnstr(glo->map[i], "11",ft_strlen(glo->map[i])))
-	// while(glo->map[i] && one_only_one(glo->map[i]) == 0)
+	// while (glo->map[i] && !ft_strnstr(glo->map[i], "11",ft_strlen(glo->map[i])))
+	while(glo->map[i] && ger1(glo->map_ptr[i]) == 1)
 		i++;
 	if (glo->map[i] == NULL)
 		ft_rr("I_THINK_YOU_FORGOT_A_MAP 🤓\n");

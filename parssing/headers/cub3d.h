@@ -6,7 +6,7 @@
 /*   By: alotfi <alotfi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 17:40:16 by alotfi            #+#    #+#             */
-/*   Updated: 2024/02/18 15:39:32 by alotfi           ###   ########.fr       */
+/*   Updated: 2024/02/18 16:23:40 by alotfi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,3 +123,6 @@ void play_pos(t_game *glo);
 int ft_strcmp(char *s1, char *s2);
 void check_pp(t_game *glo);
 void kechma(t_game *glo);
+int ger(char *str);
+int ger1(char *str);
+
