@@ -6,7 +6,7 @@
 /*   By: alotfi <alotfi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 16:53:26 by alotfi            #+#    #+#             */
-/*   Updated: 2024/02/18 15:40:11 by alotfi           ###   ########.fr       */
+/*   Updated: 2024/02/18 16:16:34 by alotfi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,7 +114,7 @@ void check_pp1(t_game *glo)
                     printf("---->OKK<-----\n");
                     exit(1);
                 }
-                if(ft_strchr("111", glo->map[i][j]))
+                if(ft_strchr("11", glo->map[i][j]))
                      flag = 1;
             }
             j++;
