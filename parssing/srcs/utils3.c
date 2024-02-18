@@ -6,7 +6,7 @@
 /*   By: alotfi <alotfi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 13:00:51 by alotfi            #+#    #+#             */
-/*   Updated: 2024/02/17 17:29:17 by alotfi           ###   ########.fr       */
+/*   Updated: 2024/02/18 15:27:48 by alotfi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ void	syntax_check(t_game *glo)
 		ft_rr("SYNTAX_ERROR1 ❌\n");
 	if (ft_strcmp(glo->F_s[0], "F")|| ft_strcmp(glo->C_s[0], "C"))
 		ft_rr("SYNTAX_ERROR2 ❌\n");
-	// syntax_check2(glo);
+	syntax_check2(glo);
 	ptr_check(glo);
 	syntax_check03(glo);
 }

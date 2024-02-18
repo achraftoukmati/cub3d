@@ -6,7 +6,7 @@
 /*   By: alotfi <alotfi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 16:53:26 by alotfi            #+#    #+#             */
-/*   Updated: 2024/02/17 17:31:14 by alotfi           ###   ########.fr       */
+/*   Updated: 2024/02/18 15:40:11 by alotfi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,6 +93,7 @@ void play_pos(t_game *glo)
         }
         i++;
     }
+    kechma(glo);
 }
 
 void check_pp1(t_game *glo)

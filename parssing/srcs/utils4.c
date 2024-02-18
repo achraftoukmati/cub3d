@@ -6,7 +6,7 @@
 /*   By: alotfi <alotfi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 13:04:41 by alotfi            #+#    #+#             */
-/*   Updated: 2024/01/17 18:05:28 by alotfi           ###   ########.fr       */
+/*   Updated: 2024/02/18 16:10:54 by alotfi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,76 +44,117 @@ int	check_map_name(char *str)
 	return (0);
 }
 
-int	f_check(char *str)
-{
-	int	i;
+// int	f_check(char *str)
+// {
+// 	int	i;
 
-	i = 0;
-	while (str && str[i])
+// 	i = 0;
+// 	while (str && str[i])
+// 	{
+// 		if ((str[i] == '1' && str[i + 1] == 32 && str[i + 2] == 'N'))
+// 			return (1);
+// 		if ((str[i] == 'N' && str[i + 1] == 32 && str[i + 2] == '1'))
+// 			return (1);
+// 		if ((str[i] == '0' && str[i + 1] == 32 && str[i + 2] == 'E'))
+// 			return (1);
+// 		if ((str[i] == 'E' && str[i + 1] == 32 && str[i + 2] == '0'))
+// 			return (1);
+// 		if ((str[i] == '1' && str[i + 1] == 32 && str[i + 2] == 'E'))
+// 			return (1);
+// 		if ((str[i] == 'E' && str[i + 1] == 32 && str[i + 2] == '1'))
+// 			return (1);
+// 		if ((str[i] == '0' && str[i + 1] == 32 && str[i + 2] == 'W'))
+// 			return (1);
+// 		if ((str[i] == 'W' && str[i + 1] == 32 && str[i + 2] == '0'))
+// 			return (1);
+// 		i++;
+// 	}
+// 	return (0);
+// }
+
+// int	f_check2(char *str)
+// {
+// 	int	i;
+
+// 	i = 0;
+// 	while (str && str[i])
+// 	{
+// 		if ((str[i] == '0' && str[i + 1] == 32 && str[i + 2] == 'N'))
+// 			return (1);
+// 		if ((str[i] == 'N' && str[i + 1] == 32 && str[i + 2] == '0'))
+// 			return (1);
+// 		if ((str[i] == '1' && str[i + 1] == 32 && str[i + 2] == 'W'))
+// 			return (1);
+// 		if ((str[i] == 'W' && str[i + 1] == 32 && str[i + 2] == '1'))
+// 			return (1);
+// 		i++;
+// 	}
+// 	return (0);
+// }
+
+// int	f_check1(char *str)
+// {
+// 	int	i;
+
+// 	i = 0;
+// 	while (str && str[i])
+// 	{
+// 		if (str[i] == '0' && str[i + 1] == 32 && str[i + 2] == '0')
+// 			return (1);
+// 		if ((str[i] == '0' && str[i + 1] == 32 && str[i + 2] == '1'))
+// 			return (1);
+// 		if ((str[i] == '1' && str[i + 1] == 32 && str[i + 2] == '0'))
+// 			return (1);
+// 		if ((str[i] == '0' && str[i + 1] == 32 && str[i + 2] == 'S'))
+// 			return (1);
+// 		if ((str[i] == 'S' && str[i + 1] == 32 && str[i + 2] == '0'))
+// 			return (1);
+// 		if ((str[i] == '1' && str[i + 1] == 32 && str[i + 2] == 'S'))
+// 			return (1);
+// 		if ((str[i] == 'S' && str[i + 1] == 32 && str[i + 2] == '1'))
+// 			return (1);
+// 		i++;
+// 	}
+// 	return (0);
+// }
+
+int ger(char *str)
+{
+	int i = 0;
+
+	while(str && str[i])
 	{
-		if ((str[i] == '1' && str[i + 1] == 32 && str[i + 2] == 'N'))
-			return (1);
-		if ((str[i] == 'N' && str[i + 1] == 32 && str[i + 2] == '1'))
-			return (1);
-		if ((str[i] == '0' && str[i + 1] == 32 && str[i + 2] == 'E'))
-			return (1);
-		if ((str[i] == 'E' && str[i + 1] == 32 && str[i + 2] == '0'))
-			return (1);
-		if ((str[i] == '1' && str[i + 1] == 32 && str[i + 2] == 'E'))
-			return (1);
-		if ((str[i] == 'E' && str[i + 1] == 32 && str[i + 2] == '1'))
-			return (1);
-		if ((str[i] == '0' && str[i + 1] == 32 && str[i + 2] == 'W'))
-			return (1);
-		if ((str[i] == 'W' && str[i + 1] == 32 && str[i + 2] == '0'))
-			return (1);
-		i++;
+		if(str[i] == '1')
+			i++;
+		else 
+		return 1;
 	}
-	return (0);
+	return 0;
 }
 
-int	f_check2(char *str)
+void kechma(t_game *glo)
 {
-	int	i;
+	int i = 1;
+	int j = 0;
+	int w = 0;
 
-	i = 0;
-	while (str && str[i])
+	while(glo->map_ptr[i])
 	{
-		if ((str[i] == '0' && str[i + 1] == 32 && str[i + 2] == 'N'))
-			return (1);
-		if ((str[i] == 'N' && str[i + 1] == 32 && str[i + 2] == '0'))
-			return (1);
-		if ((str[i] == '1' && str[i + 1] == 32 && str[i + 2] == 'W'))
-			return (1);
-		if ((str[i] == 'W' && str[i + 1] == 32 && str[i + 2] == '1'))
-			return (1);
+		j = 0;
+		while(glo->map_ptr[i][j])
+		{
+			if(ft_strchr("1", glo->map_ptr[i][j]))
+			{
+				w = j;
+				
+				if(glo->map_ptr[i - 1][w] =='\0' && ger(&glo->map_ptr[i][j]) == 1)
+				{
+					printf("--->%d<---\n", w);
+					ft_rr("NIKE \n");
+				}
+			}
+			j++;
+		}
 		i++;
 	}
-	return (0);
-}
-
-int	f_check1(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str && str[i])
-	{
-		if (str[i] == '0' && str[i + 1] == 32 && str[i + 2] == '0')
-			return (1);
-		if ((str[i] == '0' && str[i + 1] == 32 && str[i + 2] == '1'))
-			return (1);
-		if ((str[i] == '1' && str[i + 1] == 32 && str[i + 2] == '0'))
-			return (1);
-		if ((str[i] == '0' && str[i + 1] == 32 && str[i + 2] == 'S'))
-			return (1);
-		if ((str[i] == 'S' && str[i + 1] == 32 && str[i + 2] == '0'))
-			return (1);
-		if ((str[i] == '1' && str[i + 1] == 32 && str[i + 2] == 'S'))
-			return (1);
-		if ((str[i] == 'S' && str[i + 1] == 32 && str[i + 2] == '1'))
-			return (1);
-		i++;
-	}
-	return (0);
 }

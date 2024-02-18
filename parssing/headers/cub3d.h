@@ -6,7 +6,7 @@
 /*   By: alotfi <alotfi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 17:40:16 by alotfi            #+#    #+#             */
-/*   Updated: 2024/02/17 17:14:20 by alotfi           ###   ########.fr       */
+/*   Updated: 2024/02/18 15:39:32 by alotfi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ void		get_ptrs(t_game *glo);
 int			weet(char *str);
 int			weet2(char *str);
 void weet3(t_game *glo);
-int			f_check(char *str);
+// int			f_check(char *str);
 void		valid_path(t_game *glo);
 int			kama(char *str);
 int			ft_kama(char *str);
@@ -101,8 +101,8 @@ char		*read_fd(int fd, char *str);
 char		*get_next_line(int fd);
 void		get_map(t_game *glo);
 // void	ft_check_map3(t_game *glo);
-int			f_check1(char *str);
-int			f_check2(char *str);
+// int			f_check1(char *str);
+// int			f_check2(char *str);
 void	syntax_check2(t_game *glo);
 void	ptr_check(t_game *glo);
 t_counters	pssss(void);
@@ -122,3 +122,4 @@ void check_pp1(t_game *glo);
 void play_pos(t_game *glo);
 int ft_strcmp(char *s1, char *s2);
 void check_pp(t_game *glo);
+void kechma(t_game *glo);
