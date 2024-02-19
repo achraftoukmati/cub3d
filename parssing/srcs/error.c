@@ -6,7 +6,7 @@
 /*   By: alotfi <alotfi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 16:53:26 by alotfi            #+#    #+#             */
-/*   Updated: 2024/02/18 18:10:18 by alotfi           ###   ########.fr       */
+/*   Updated: 2024/02/19 19:51:20 by alotfi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,13 @@
 #include "../headers/cub3d.h"
 
 
-
+void mektr(t_game * glo);
 void check_pp(t_game *glo)
 {
     int i = 0;
     int j = 0;
-
+    int flag;
+    flag = 0;
 
     while(glo->map[i])
     {
@@ -110,10 +111,7 @@ void check_pp1(t_game *glo)
             if(ft_strchr("1", glo->map[i][0]) || ft_strchr(" ", glo->map[i][0])|| ft_strchr("   ", glo->map[i][0]))
             {
                 if((one_only_one(&glo->map[i][j]) == 1 && flag != 1))
-                {
-                    printf("---->OKK<-----\n");
-                    exit(1);
-                }
+                ft_rr("--->ok<---- \n");
                 if(ft_strchr("11", glo->map[i][j]))
                      flag = 1;
             }
@@ -121,7 +119,7 @@ void check_pp1(t_game *glo)
         }
         i++;
     }
-
 }
+
 //9lb 3la awl str 3amer wahdat
 // nd map matkonch fiha smtg mn ghir SWPN01 

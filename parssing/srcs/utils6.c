@@ -6,7 +6,7 @@
 /*   By: alotfi <alotfi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 15:16:35 by alotfi            #+#    #+#             */
-/*   Updated: 2024/02/18 18:13:04 by alotfi           ###   ########.fr       */
+/*   Updated: 2024/02/18 19:38:59 by alotfi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,39 +29,15 @@ void	check_map(t_game *glo)
 	{
 		if (ft_fchecker(glo->map_ptr[i], '1', 32) == 1 || ft_fchecker(glo->map_ptr[j - 1], '1', 32) == 1)
 			ft_rr("UNVALID_MAP1 \n");
-			// ft_rr("UNVALID_MAP1 \n");
 		i++;
 	}
 	while (glo->map_ptr[w])
 	{
-		if (weet(glo->map_ptr[w]) == 0 || weet2(glo->map_ptr[w]) == 0 )//|| f_check(glo->map_ptr[w]) == 1)
+		if (weet(glo->map_ptr[w]) == 0 || weet2(glo->map_ptr[w]) == 0 )
 			ft_rr("UNVALID_MAP2 \n");
 		w++;
 	}
-	// last_line(glo);
 }
-
-// void last_line(t_game *glo)
-// {
-// 	int w = 0;
-// 	int j = 0;
-// 	int flag = 0;
-
-// 	while (glo->map_ptr[j])
-// 		j++;
-		
-// 	while(glo->map_ptr[j - 1] && flag != 1)
-// 	{
-// 		w = 0;
-// 		while(glo->map_ptr[j - 1][w])
-// 		{
-// 			if(!ft_strchr("1 ", glo->map_ptr[j - 1][w]))
-// 				ft_rr("PLAN \n");
-// 			w++;
-// 		}
-// 		flag = 1;
-// 	}
-// }
 
 int	kama(char *str)
 {
