@@ -6,7 +6,7 @@
 /*   By: alotfi <alotfi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 21:49:19 by alotfi            #+#    #+#             */
-/*   Updated: 2024/02/18 17:14:39 by alotfi           ###   ########.fr       */
+/*   Updated: 2024/02/21 15:45:16 by alotfi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,8 @@ void	get_map(t_game *glo)
 
 void	get_ptrs(t_game *glo)
 {
+
+	
 	t_counters	ps;
 
 	ps = pssss();

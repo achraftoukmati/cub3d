@@ -6,7 +6,7 @@
 /*   By: alotfi <alotfi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 16:53:26 by alotfi            #+#    #+#             */
-/*   Updated: 2024/02/19 19:51:20 by alotfi           ###   ########.fr       */
+/*   Updated: 2024/02/21 16:47:25 by alotfi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include "../headers/cub3d.h"
 
 
-void mektr(t_game * glo);
+void gook(t_game *glo);
 void check_pp(t_game *glo)
 {
     int i = 0;
@@ -33,11 +33,19 @@ void check_pp(t_game *glo)
                 printf("---->OOK<-----\n");
                 exit(1);
             }
+           else if (ft_strchr("NSWE", glo->map[i][0]))
+            {
+                if (!(glo->map[i][0] == 'N' && glo->map[i][1] == 'O') 
+                && !(glo->map[i][0] == 'S' && glo->map[i][1] == 'O') 
+                && !(glo->map[i][0] == 'W' && glo->map[i][1] == 'E') 
+                && !(glo->map[i][0] == 'E' && glo->map[i][1] == 'A'))
+                    ft_rr("---->OOK1<-----\n");
+            }
             j++;
         }
         i++;
     }
-    check_pp1(glo);
+    // check_pp1(glo);
     play_pos(glo);
 }
 
@@ -94,7 +102,6 @@ void play_pos(t_game *glo)
         }
         i++;
     }
-    kechma(glo);
 }
 
 void check_pp1(t_game *glo)
@@ -111,7 +118,7 @@ void check_pp1(t_game *glo)
             if(ft_strchr("1", glo->map[i][0]) || ft_strchr(" ", glo->map[i][0])|| ft_strchr("   ", glo->map[i][0]))
             {
                 if((one_only_one(&glo->map[i][j]) == 1 && flag != 1))
-                ft_rr("--->ok<---- \n");
+                ft_rr("--->ok1<---- \n");
                 if(ft_strchr("11", glo->map[i][j]))
                      flag = 1;
             }
@@ -120,6 +127,41 @@ void check_pp1(t_game *glo)
         i++;
     }
 }
+
+void gook(t_game *glo)
+{
+    int i = 0;
+    int j = 0;
+    int counter = 0;
+    int flag = 0;
+
+    while(glo->map[i])
+    {
+        j = 0;
+        while(glo->map[i][j])
+        {
+            if( ft_strchr("N",glo->map[i][j]))
+                {
+                    printf("-->%c<---\n", glo->map[i][j]);
+                    counter++;
+                }
+                if(glo->map[i][j] == 'N' && glo->map[i][j + 1] == '1')
+                {
+                    flag = 1;
+                }
+                j++;
+        }
+        i++;
+    }
+    if(counter > 1 && flag == 0)
+    {
+        printf("-->%d<---", counter);
+        ft_rr("blan\n");
+    }
+}
+
+
+    
 
 //9lb 3la awl str 3amer wahdat
 // nd map matkonch fiha smtg mn ghir SWPN01 

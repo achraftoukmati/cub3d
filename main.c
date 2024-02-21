@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: atoukmat <atoukmat@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alotfi <alotfi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 22:12:05 by atoukmat          #+#    #+#             */
-/*   Updated: 2024/02/08 18:39:36 by atoukmat         ###   ########.fr       */
+/*   Updated: 2024/02/21 15:50:52 by alotfi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,7 @@ int	main(int ac, char **av)
 	init(&data, &glo);
 	start_game(&data);
 	exiting(&data, 0);
+
+	
 	return (0);
 }
