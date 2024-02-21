@@ -6,7 +6,7 @@
 /*   By: alotfi <alotfi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 17:40:16 by alotfi            #+#    #+#             */
-/*   Updated: 2024/02/18 16:23:40 by alotfi           ###   ########.fr       */
+/*   Updated: 2024/02/21 18:43:37 by alotfi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,26 +103,22 @@ void		get_map(t_game *glo);
 // void	ft_check_map3(t_game *glo);
 // int			f_check1(char *str);
 // int			f_check2(char *str);
-void	syntax_check2(t_game *glo);
-void	ptr_check(t_game *glo);
+void		syntax_check2(t_game *glo);
+void		ptr_check(t_game *glo);
 t_counters	pssss(void);
-void	get_ptrs2(t_game *glo);
-void splited_map(t_game *glo);
-void split_map(char *map);
-void	ft_check_map3(t_game *glo);
-void chkeck_player(t_game *glo);
+void		get_ptrs2(t_game *glo);
+void		splited_map(t_game *glo);
+void		split_map(char *map);
+void		ft_check_map3(t_game *glo);
+void		chkeck_player(t_game *glo);
 
 // ERROR CHECK
-void ft_rr(char *str);
-
-
-
-int one_only_one(char *str );
-void check_pp1(t_game *glo);
-void play_pos(t_game *glo);
-int ft_strcmp(char *s1, char *s2);
-void check_pp(t_game *glo);
-void kechma(t_game *glo);
-int ger(char *str);
-int ger1(char *str);
-
+void		ft_rr(char *str);
+int			one_only_one(char *str );
+void		check_pp1(t_game *glo);
+void		play_pos(t_game *glo);
+int			ft_strcmp(char *s1, char *s2);
+void		check_pp(t_game *glo);
+void		kechma(t_game *glo);
+int			ger(char *str);
+int			ger1(char *str);

@@ -6,7 +6,7 @@
 /*   By: alotfi <alotfi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/29 22:17:00 by alotfi            #+#    #+#             */
-/*   Updated: 2024/01/17 16:19:42 by alotfi           ###   ########.fr       */
+/*   Updated: 2024/02/21 18:27:30 by alotfi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static size_t	my_cont(char *s, char c, char w)
 {
-	size_t count;
+	size_t	count;
 
 	count = 0;
 	while (*s)

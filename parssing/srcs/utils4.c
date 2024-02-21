@@ -6,7 +6,7 @@
 /*   By: alotfi <alotfi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 13:04:41 by alotfi            #+#    #+#             */
-/*   Updated: 2024/02/18 19:39:20 by alotfi           ###   ########.fr       */
+/*   Updated: 2024/02/21 18:32:47 by alotfi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	check_map_name(char *str)
 	while (str && str[i])
 	{
 		if (str[i] == '.' && str[i + 1] == 'c' && str[i + 2] == 'u' && str[i
-			+ 3] == 'b')
+				+ 3] == 'b')
 			return (1);
 		else
 			i++;
@@ -44,51 +44,54 @@ int	check_map_name(char *str)
 	return (0);
 }
 
-int ger(char *str)
+int	ger(char *str)
 {
-	int i = 0;
+	int	i;
 
-	while(str && str[i])
+	i = 0;
+	while (str && str[i])
 	{
-		if(str[i] == '1')
+		if (str[i] == '1')
 			i++;
 		else 
-		return 1;
+			return (1);
 	}
-	return 0;
+	return (0);
 }
-int ger1(char *str)
-{
-	int i = 0;
 
-	while(str && str[i])
+int	ger1(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str && str[i])
 	{
-		if(str[i] == '1' || str[i] == 32)
+		if (str[i] == '1' || str[i] == 32)
 			i++;
 		else 
-		return 1;
+			return (1);
 	}
-	return 0;
+	return (0);
 }
 
-void kechma(t_game *glo)
+void	kechma(t_game *glo)
 {
-	int i = 1;
-	int j = 0;
-	int w = 0;
+	int	i;
+	int	j;
+	int	w;
 
-	while(glo->map_ptr[i])
+	i = 1;
+	while (glo->map_ptr[i])
 	{
 		j = 0;
-		while(glo->map_ptr[i][j])
+		while (glo->map_ptr[i][j])
 		{
-			if(ft_strchr("1", glo->map_ptr[i][j]))
+			if (ft_strchr("1", glo->map_ptr[i][j]))
 			{
 				w = j;
-				
-				if(glo->map_ptr[i - 1][w] =='\0' && ger(&glo->map_ptr[i][j]) == 1)
+				if (glo->map_ptr[i - 1][w] == '\0' &&
+				ger(&glo->map_ptr[i][j]) == 1)
 					ft_rr("NIKE \n");
-				
 			}
 			j++;
 		}

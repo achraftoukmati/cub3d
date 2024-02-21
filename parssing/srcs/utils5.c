@@ -6,13 +6,14 @@
 /*   By: alotfi <alotfi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 13:02:28 by alotfi            #+#    #+#             */
-/*   Updated: 2024/02/21 15:50:44 by alotfi           ###   ########.fr       */
+/*   Updated: 2024/02/21 18:29:57 by alotfi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/cub3d.h"
 
-void cpp(t_game *glo);
+void	cpp(t_game *glo);
+
 void	ft_check_map(t_game *glo)
 {
 	int	i;
@@ -39,13 +40,15 @@ void	ft_check_map(t_game *glo)
 	cpp(glo);
 }
 
-void cpp(t_game *glo)
+void	cpp(t_game *glo)
 {
-	int i = 0;
-	int j = 0;
-	
+	int	i;
+	int	j;
+
+	i = 0;
 	while (glo->map_ptr[i])
-	{	j = 0;
+	{
+		j = 0;
 		while (glo->map_ptr[i][j])
 		{
 			if (!ft_strchr("NSWE01 ", glo->map_ptr[i][j]))
@@ -121,5 +124,4 @@ void	cub_all(t_game *glo)
 	ft_check_map(glo);
 	valid_path(glo);
 	ft_check_map2(glo);
-	
 }

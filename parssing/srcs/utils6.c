@@ -6,12 +6,11 @@
 /*   By: alotfi <alotfi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 15:16:35 by alotfi            #+#    #+#             */
-/*   Updated: 2024/02/18 19:38:59 by alotfi           ###   ########.fr       */
+/*   Updated: 2024/02/21 18:28:47 by alotfi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/cub3d.h"
-
 
 // void last_line(t_game *glo);
 void	check_map(t_game *glo)
@@ -27,13 +26,14 @@ void	check_map(t_game *glo)
 		j++;
 	while (glo->map_ptr[i] && i < 1)
 	{
-		if (ft_fchecker(glo->map_ptr[i], '1', 32) == 1 || ft_fchecker(glo->map_ptr[j - 1], '1', 32) == 1)
+		if (ft_fchecker(glo->map_ptr[i], '1', 32) == 1 
+			|| ft_fchecker(glo->map_ptr[j - 1], '1', 32) == 1)
 			ft_rr("UNVALID_MAP1 \n");
 		i++;
 	}
 	while (glo->map_ptr[w])
 	{
-		if (weet(glo->map_ptr[w]) == 0 || weet2(glo->map_ptr[w]) == 0 )
+		if (weet(glo->map_ptr[w]) == 0 || weet2(glo->map_ptr[w]) == 0)
 			ft_rr("UNVALID_MAP2 \n");
 		w++;
 	}
