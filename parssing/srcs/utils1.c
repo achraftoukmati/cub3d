@@ -6,7 +6,7 @@
 /*   By: alotfi <alotfi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 12:58:25 by alotfi            #+#    #+#             */
-/*   Updated: 2024/02/17 19:17:54 by alotfi           ###   ########.fr       */
+/*   Updated: 2024/02/22 16:24:40 by alotfi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,5 +81,4 @@ void	weet3(t_game *glo)
 	}
 	if (count > 1)
 		ft_rr("THERE_IS_MORE_THAN_ONE_PLAYER ❌\n");
-		
 }

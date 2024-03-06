@@ -6,7 +6,7 @@
 /*   By: alotfi <alotfi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 18:02:27 by alotfi            #+#    #+#             */
-/*   Updated: 2024/02/21 18:41:16 by alotfi           ###   ########.fr       */
+/*   Updated: 2024/02/22 16:32:53 by alotfi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,4 +50,22 @@ void	ft_rr(char *str)
 		i++;
 	}
 	exit(1);
+}
+
+int	ft_strcmp(char *s1, char *s2)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	j = 0;
+	while (s1[i] &&	s2[i] && s1[i] == s2[i])
+	{
+		i++;
+		j++;
+	}
+	if (s1[i] == s2[i])
+		return (0);
+	else 
+		return (1);
 }

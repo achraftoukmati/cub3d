@@ -6,7 +6,7 @@
 /*   By: alotfi <alotfi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 13:00:51 by alotfi            #+#    #+#             */
-/*   Updated: 2024/02/18 15:27:48 by alotfi           ###   ########.fr       */
+/*   Updated: 2024/02/22 16:33:09 by alotfi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,10 +49,10 @@ void	splited_ptrs(t_game *glo)
 	glo->F_s = ft_split(glo->F, 32, ',');
 	glo->C_s = ft_split(glo->C, 32, ',');
 }
-void syntax_check03(t_game *glo)
+
+void	syntax_check03(t_game *glo)
 {
 	splited_ptrs(glo);
-
 	if (!ft_strnstr(glo->NO_s[1], ".png", ft_strlen(glo->NO_s[1]))
 		|| !ft_strnstr(glo->SO_s[1], ".png", ft_strlen(glo->SO_s[1]))
 		|| !ft_strnstr(glo->WE_s[1], ".png", ft_strlen(glo->WE_s[1]))
@@ -63,7 +63,6 @@ void syntax_check03(t_game *glo)
 void	syntax_check(t_game *glo)
 {
 	splited_ptrs(glo);
-	
 	if (table_counter(glo->NO_s) != 2 || table_counter(glo->SO_s) != 2
 		|| table_counter(glo->WE_s) != 2 || table_counter(glo->EA_s) != 2)
 		ft_rr("SYNTAX_ERROR ❌\n");
@@ -72,9 +71,10 @@ void	syntax_check(t_game *glo)
 	if (kama(glo->F) == 1 || kama(glo->C) == 1 || ft_kama(glo->C) == 1
 		|| ft_kama(glo->F) == 1)
 		ft_rr("SYNTAX_ERROR ❌\n");
-	if (ft_strcmp(glo->NO_s[0], "NO")|| ft_strcmp(glo->SO_s[0], "SO")|| ft_strcmp(glo->WE_s[0], "WE")|| ft_strcmp(glo->EA_s[0], "EA"))
+	if (ft_strcmp(glo->NO_s[0], "NO") || ft_strcmp(glo->SO_s[0], "SO")
+		|| ft_strcmp(glo->WE_s[0], "WE") || ft_strcmp(glo->EA_s[0], "EA"))
 		ft_rr("SYNTAX_ERROR1 ❌\n");
-	if (ft_strcmp(glo->F_s[0], "F")|| ft_strcmp(glo->C_s[0], "C"))
+	if (ft_strcmp(glo->F_s[0], "F") || ft_strcmp(glo->C_s[0], "C"))
 		ft_rr("SYNTAX_ERROR2 ❌\n");
 	syntax_check2(glo);
 	ptr_check(glo);
@@ -114,18 +114,3 @@ void	ptr_check(t_game *glo)
 	weet3(glo);
 }
 
-int ft_strcmp(char *s1, char *s2)
-{
-    int i = 0;
-    int j = 0;
-
-    while(s1[i] && s2[i] && s1[i] == s2[i])
-    {
-        i++;
-        j++;
-    }
-    if(s1[i] == s2[i])
-        return 0;
-    else 
-        return 1;
-}
