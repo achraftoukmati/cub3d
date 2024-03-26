@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils4.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alotfi <alotfi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: alotfi <alotfi@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 13:04:41 by alotfi            #+#    #+#             */
-/*   Updated: 2024/02/21 18:32:47 by alotfi           ###   ########.fr       */
+/*   Updated: 2024/03/26 00:32:16 by alotfi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,7 @@ void	kechma(t_game *glo)
 				w = j;
 				if (glo->map_ptr[i - 1][w] == '\0' &&
 				ger(&glo->map_ptr[i][j]) == 1)
-					ft_rr("NIKE \n");
+					ft_rr("ERROR03 \n");
 			}
 			j++;
 		}

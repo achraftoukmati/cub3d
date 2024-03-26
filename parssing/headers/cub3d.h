@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alotfi <alotfi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: alotfi <alotfi@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 17:40:16 by alotfi            #+#    #+#             */
-/*   Updated: 2024/02/21 18:43:37 by alotfi           ###   ########.fr       */
+/*   Updated: 2024/03/26 00:40:26 by alotfi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,3 +122,4 @@ void		check_pp(t_game *glo);
 void		kechma(t_game *glo);
 int			ger(char *str);
 int			ger1(char *str);
+void		gook(t_game *glo);

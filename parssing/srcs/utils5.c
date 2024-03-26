@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils5.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alotfi <alotfi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: alotfi <alotfi@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 13:02:28 by alotfi            #+#    #+#             */
-/*   Updated: 2024/02/21 18:29:57 by alotfi           ###   ########.fr       */
+/*   Updated: 2024/03/26 00:20:45 by alotfi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void	cpp(t_game *glo)
 		while (glo->map_ptr[i][j])
 		{
 			if (!ft_strchr("NSWE01 ", glo->map_ptr[i][j]))
-				ft_rr("RAMZI\n");
+				ft_rr("BAD MAP\n");
 			j++;
 		}
 		i++;

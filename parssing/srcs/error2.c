@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   error2.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alotfi <alotfi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: alotfi <alotfi@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 18:02:27 by alotfi            #+#    #+#             */
-/*   Updated: 2024/02/22 16:32:53 by alotfi           ###   ########.fr       */
+/*   Updated: 2024/03/26 00:31:57 by alotfi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,4 +68,33 @@ int	ft_strcmp(char *s1, char *s2)
 		return (0);
 	else 
 		return (1);
+}
+
+void	gook(t_game *glo)
+{
+    int i = 0;
+    int j = 0;
+    int counter = 0;
+    int flag = 0;
+
+    while (glo->map[i])
+    {
+        j = 0;
+        while (glo->map[i][j])
+        {
+            if ( ft_strchr("N",glo->map[i][j]))
+            {
+                printf("-->%c<---\n", glo->map[i][j]);
+                counter++;
+            }
+            if (glo->map[i][j] == 'N' && glo->map[i][j + 1] == '1')
+            {
+                flag = 1;
+            }
+            j++;
+        }
+        i++;
+    }
+    if (counter > 1  &&  flag == 0)
+    ft_rr ("ERROR 02\n");
 }

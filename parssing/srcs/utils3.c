@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils3.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alotfi <alotfi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: alotfi <alotfi@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 13:00:51 by alotfi            #+#    #+#             */
-/*   Updated: 2024/02/22 16:33:09 by alotfi           ###   ########.fr       */
+/*   Updated: 2024/03/26 00:34:41 by alotfi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,25 +92,3 @@ void	syntax_check2(t_game *glo)
 	if (open(glo->EA_s[1], O_RDONLY) == -1)
 		ft_rr("UNVALID_PATH_TEXTURE ❌\n");
 }
-
-void	ptr_check(t_game *glo)
-{
-	int	i;
-	int	j;
-
-	i = 1;
-	j = 1;
-	while (glo->F_s[i] && glo->C_s[j])
-	{
-		if (!is_number(glo->F_s[i]) || !is_number(glo->C_s[j]))
-			ft_rr("NUMERIC_ARGUMENT_REQUIRED ❌\n");
-		i++;
-		j++;
-	}
-	if (!(ft_atoi(glo->F_s[1]) <= 255 && ft_atoi(glo->F_s[2]) <= 255
-			&& ft_atoi(glo->F_s[3]) <= 255) || !(ft_atoi(glo->C_s[1]) <= 255
-			&& ft_atoi(glo->C_s[2]) <= 255 && ft_atoi(glo->C_s[3]) <= 255))
-		ft_rr("DO_NOT_EXCEED_255 ❌\n");
-	weet3(glo);
-}
-

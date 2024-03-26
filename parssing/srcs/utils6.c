@@ -3,16 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   utils6.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alotfi <alotfi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: alotfi <alotfi@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 15:16:35 by alotfi            #+#    #+#             */
-/*   Updated: 2024/02/21 18:28:47 by alotfi           ###   ########.fr       */
+/*   Updated: 2024/03/26 00:35:03 by alotfi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/cub3d.h"
 
-// void last_line(t_game *glo);
 void	check_map(t_game *glo)
 {
 	int	i;
@@ -93,4 +92,25 @@ t_counters	pssss(void)
 	ps.f_c = 0;
 	ps.c_c = 0;
 	return (ps);
+}
+
+void	ptr_check(t_game *glo)
+{
+	int	i;
+	int	j;
+
+	i = 1;
+	j = 1;
+	while (glo->F_s[i] && glo->C_s[j])
+	{
+		if (!is_number(glo->F_s[i]) || !is_number(glo->C_s[j]))
+			ft_rr("NUMERIC_ARGUMENT_REQUIRED ❌\n");
+		i++;
+		j++;
+	}
+	if (!(ft_atoi(glo->F_s[1]) <= 255 && ft_atoi(glo->F_s[2]) <= 255
+			&& ft_atoi(glo->F_s[3]) <= 255) || !(ft_atoi(glo->C_s[1]) <= 255
+			&& ft_atoi(glo->C_s[2]) <= 255 && ft_atoi(glo->C_s[3]) <= 255))
+		ft_rr("DO_NOT_EXCEED_255 ❌\n");
+	weet3(glo);
 }
