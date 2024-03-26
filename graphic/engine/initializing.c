@@ -50,7 +50,7 @@ int	init_player(t_data *data)
 	data->player->rotation_angel = M_PI / 2;
 	data->player->walk_diraction = 0;
 	data->player->turn_diraction = 0;
-	data->player->rotation_speed = 2 * (M_PI / 180);
+	data->player->rotation_speed = 4 * (M_PI / 180);
 	data->player->fov_angle = 60 * (M_PI / 180);
 	data->player->wall_strip_width = 1;
 	data->player->num_rays = S_W;

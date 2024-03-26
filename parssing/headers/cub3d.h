@@ -22,16 +22,8 @@
 
 #endif
 
-typedef struct e_colors
-{
-	int F[3];
-	int C[3];
-	
-} t_colors;
-
 typedef struct s_game
 {
-	t_colors colors;
 	char	*map_name;
 	int		fd;
 	char	**map;
