@@ -25,7 +25,5 @@ int	main(int ac, char **av)
 	init(&data, &glo);
 	start_game(&data);
 	exiting(&data, 0);
-
-	
 	return (0);
 }

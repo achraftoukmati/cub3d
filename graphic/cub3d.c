@@ -36,6 +36,8 @@ void	escape(void *data)
 
 int	init_mlx(t_mlx *mlx, t_map *map)
 {
+	// if(!mlx_load_png(map->ea))
+	// 	exit(6);
 	mlx->ea = mlx_load_png(map->ea);
 	mlx->no = mlx_load_png(map->no);
 	mlx->so = mlx_load_png(map->so);
