@@ -6,7 +6,7 @@
 /*   By: alotfi <alotfi@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 15:16:35 by alotfi            #+#    #+#             */
-/*   Updated: 2024/03/26 00:35:03 by alotfi           ###   ########.fr       */
+/*   Updated: 2024/03/27 17:07:11 by alotfi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	check_map(t_game *glo)
 		j++;
 	while (glo->map_ptr[i] && i < 1)
 	{
-		if (ft_fchecker(glo->map_ptr[i], '1', 32) == 1 
+		if (ft_fchecker(glo->map_ptr[i], '1', 32) == 1
 			|| ft_fchecker(glo->map_ptr[j - 1], '1', 32) == 1)
 			ft_rr("UNVALID_MAP1 \n");
 		i++;
@@ -101,16 +101,16 @@ void	ptr_check(t_game *glo)
 
 	i = 1;
 	j = 1;
-	while (glo->F_s[i] && glo->C_s[j])
+	while (glo->f_s[i] && glo->c_s[j])
 	{
-		if (!is_number(glo->F_s[i]) || !is_number(glo->C_s[j]))
+		if (!is_number(glo->f_s[i]) || !is_number(glo->c_s[j]))
 			ft_rr("NUMERIC_ARGUMENT_REQUIRED ❌\n");
 		i++;
 		j++;
 	}
-	if (!(ft_atoi(glo->F_s[1]) <= 255 && ft_atoi(glo->F_s[2]) <= 255
-			&& ft_atoi(glo->F_s[3]) <= 255) || !(ft_atoi(glo->C_s[1]) <= 255
-			&& ft_atoi(glo->C_s[2]) <= 255 && ft_atoi(glo->C_s[3]) <= 255))
+	if (!(ft_atoi(glo->f_s[1]) <= 255 && ft_atoi(glo->f_s[2]) <= 255
+			&& ft_atoi(glo->f_s[3]) <= 255) || !(ft_atoi(glo->c_s[1]) <= 255
+			&& ft_atoi(glo->c_s[2]) <= 255 && ft_atoi(glo->c_s[3]) <= 255))
 		ft_rr("DO_NOT_EXCEED_255 ❌\n");
 	weet3(glo);
 }

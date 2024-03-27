@@ -6,7 +6,7 @@
 /*   By: alotfi <alotfi@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 18:35:13 by atoukmat          #+#    #+#             */
-/*   Updated: 2024/03/26 00:40:20 by alotfi           ###   ########.fr       */
+/*   Updated: 2024/03/27 17:03:51 by alotfi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ int	init_map(t_map *data, t_game *ayoub)
 	data->map_height = max_h(data->map);
 	data->map_width = max_w(data->map);
 	data->unit = 80;
-	data->ea = ayoub->EA_s[1];
-	data->no = ayoub->NO_s[1];
-	data->so = ayoub->SO_s[1];
-	data->we = ayoub->WE_s[1];
+	data->ea = ayoub->ea_s[1];
+	data->no = ayoub->no_s[1];
+	data->so = ayoub->so_s[1];
+	data->we = ayoub->we_s[1];
 	data->angle = 0.0f;
 	return (0);
 }
@@ -33,10 +33,10 @@ int	init(t_data *data, t_game *ayoub)
 	data->player = malloc(sizeof(t_player));
 	init_player(data);
 	data->mlx = malloc(sizeof(t_mlx));
-	data->mlx->celling = get_rgba(ft_atoi(ayoub->F_s[1]),
-			ft_atoi(ayoub->F_s[2]), ft_atoi(ayoub->F_s[3]), 0);
-	data->mlx->floor = get_rgba(ft_atoi(ayoub->C_s[1]), ft_atoi(ayoub->C_s[2]),
-			ft_atoi(ayoub->C_s[3]), 1);
+	data->mlx->celling = get_rgba(ft_atoi(ayoub->f_s[1]),
+			ft_atoi(ayoub->f_s[2]), ft_atoi(ayoub->f_s[3]), 0);
+	data->mlx->floor = get_rgba(ft_atoi(ayoub->c_s[1]), ft_atoi(ayoub->c_s[2]),
+			ft_atoi(ayoub->c_s[3]), 1);
 	data->vars = malloc(sizeof(t_rays));
 	return (0);
 }

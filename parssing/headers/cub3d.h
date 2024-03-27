@@ -6,7 +6,7 @@
 /*   By: alotfi <alotfi@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 17:40:16 by alotfi            #+#    #+#             */
-/*   Updated: 2024/03/26 00:40:26 by alotfi           ###   ########.fr       */
+/*   Updated: 2024/03/27 17:02:50 by alotfi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,18 +27,18 @@ typedef struct s_game
 	char	*map_name;
 	int		fd;
 	char	**map;
-	char	*NO;
-	char	*SO;
-	char	*WE;
-	char	*EA;
-	char	*F;
-	char	*C;
-	char	**NO_s;
-	char	**SO_s;
-	char	**WE_s;
-	char	**EA_s;
-	char	**F_s;
-	char	**C_s;
+	char	*no;
+	char	*so;
+	char	*we;
+	char	*ea;
+	char	*f;
+	char	*c;
+	char	**no_s;
+	char	**so_s;
+	char	**we_s;
+	char	**ea_s;
+	char	**f_s;
+	char	**c_s;
 	char	**map_ptr;
 }			t_game;
 

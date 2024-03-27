@@ -36,7 +36,7 @@ int	check_map_name(char *str)
 	while (str && str[i])
 	{
 		if (str[i] == '.' && str[i + 1] == 'c' && str[i + 2] == 'u' && str[i
-				+ 3] == 'b')
+			+ 3] == 'b')
 			return (1);
 		else
 			i++;
@@ -53,7 +53,7 @@ int	ger(char *str)
 	{
 		if (str[i] == '1')
 			i++;
-		else 
+		else
 			return (1);
 	}
 	return (0);
@@ -68,7 +68,7 @@ int	ger1(char *str)
 	{
 		if (str[i] == '1' || str[i] == 32)
 			i++;
-		else 
+		else
 			return (1);
 	}
 	return (0);
@@ -89,8 +89,8 @@ void	kechma(t_game *glo)
 			if (ft_strchr("1", glo->map_ptr[i][j]))
 			{
 				w = j;
-				if (glo->map_ptr[i - 1][w] == '\0' &&
-				ger(&glo->map_ptr[i][j]) == 1)
+				if (glo->map_ptr[i - 1][w] == '\0'
+					&& ger(&glo->map_ptr[i][j]) == 1)
 					ft_rr("ERROR03 \n");
 			}
 			j++;

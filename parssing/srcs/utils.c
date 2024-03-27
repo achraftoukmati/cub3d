@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alotfi <alotfi@student.42.fr>              +#+  +:+       +#+        */
+/*   By: alotfi <alotfi@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 21:49:19 by alotfi            #+#    #+#             */
-/*   Updated: 2024/02/22 16:24:31 by alotfi           ###   ########.fr       */
+/*   Updated: 2024/03/27 17:00:39 by alotfi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void	get_map(t_game *glo)
 	int	i;
 
 	i = 0;
-	while (glo->map[i] && ger1 (glo->map_ptr[i]) == 1)
+	while (glo->map[i] && ger1(glo->map_ptr[i]) == 1)
 		i++;
 	if (glo->map[i] == NULL)
 		ft_rr("I_THINK_YOU_FORGOT_A_MAP1 🤓\n");
@@ -77,17 +77,17 @@ void	get_ptrs(t_game *glo)
 	{
 		if (ft_strnstr(glo->map[ps.i], "EA", ft_strlen(glo->map[ps.i])))
 		{
-			glo->EA = glo->map[ps.i];
+			glo->ea = glo->map[ps.i];
 			ps.ea_c++;
 		}
 		else if (ft_strnstr(glo->map[ps.i], "F", ft_strlen(glo->map[ps.i])))
 		{
-			glo->F = glo->map[ps.i];
+			glo->f = glo->map[ps.i];
 			ps.f_c++;
 		}
 		else if (ft_strnstr(glo->map[ps.i], "C", ft_strlen(glo->map[ps.i])))
 		{
-			glo->C = glo->map[ps.i];
+			glo->c = glo->map[ps.i];
 			ps.c_c++;
 		}
 		ps.i++;
@@ -106,17 +106,17 @@ void	get_ptrs2(t_game *glo)
 	{
 		if (ft_strnstr(glo->map[ph.i], "NO", ft_strlen(glo->map[ph.i])))
 		{
-			glo->NO = glo->map[ph.i];
+			glo->no = glo->map[ph.i];
 			ph.no_c++;
 		}
 		else if (ft_strnstr(glo->map[ph.i], "SO", ft_strlen(glo->map[ph.i])))
 		{
-			glo->SO = glo->map[ph.i];
+			glo->so = glo->map[ph.i];
 			ph.so_c++;
 		}
 		else if (ft_strnstr(glo->map[ph.i], "WE", ft_strlen(glo->map[ph.i])))
 		{
-			glo->WE = glo->map[ph.i];
+			glo->we = glo->map[ph.i];
 			ph.we_c++;
 		}
 		ph.i++;
