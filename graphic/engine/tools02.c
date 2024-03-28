@@ -31,10 +31,14 @@ void	mlx_end(t_data *data)
 	mlx_delete_image(data->mlx->mlx, data->mlx->img);
 	mlx_close_window(data->mlx->mlx);
 	mlx_terminate(data->mlx->mlx);
-	mlx_delete_texture(data->mlx->ea);
-	mlx_delete_texture(data->mlx->so);
-	mlx_delete_texture(data->mlx->no);
-	mlx_delete_texture(data->mlx->we);
+	if(data->mlx->ea)
+		mlx_delete_texture(data->mlx->ea);
+	if(data->mlx->so)
+		mlx_delete_texture(data->mlx->so);
+	if(data->mlx->no)
+		mlx_delete_texture(data->mlx->no);
+	if(data->mlx->we)
+		mlx_delete_texture(data->mlx->we);
 }
 
 void	exiting(t_data *data, int var)
