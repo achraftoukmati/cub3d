@@ -34,22 +34,19 @@ void	escape(void *data)
 		exiting((t_data *)data, 0);
 }
 
-int	init_mlx(t_mlx *mlx, t_map *map)
+int	init_mlx(t_data *data)
 {
-	// if(!mlx_load_png(map->ea))
-	// 	exit(6);
-	mlx->ea = mlx_load_png(map->ea);
-	mlx->no = mlx_load_png(map->no);
-	mlx->so = mlx_load_png(map->so);
-	mlx->we = mlx_load_png(map->we);
+	if(!(data->mlx->ea = mlx_load_png(data->map->ea)) || !(data->mlx->no = mlx_load_png(data->map->no)) || !(data->mlx->so = mlx_load_png(data->map->so)) || !(data->mlx->we = mlx_load_png(data->map->we)))
+		exiting(data,1);
 	return (0);
 }
+
 
 void	start_game(t_data *data)
 {
 	data->mlx->mlx = mlx_init(S_W, S_H, "cub", false);
 	data->mlx->img = mlx_new_image(data->mlx->mlx, S_W, S_H);
-	init_mlx(data->mlx, data->map);
+	init_mlx(data);
 	mlx_loop_hook(data->mlx->mlx, game_loop, data);
 	mlx_loop_hook(data->mlx->mlx, escape, data);
 	mlx_loop(data->mlx->mlx);
