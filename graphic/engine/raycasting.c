@@ -14,6 +14,7 @@
 
 void	cast_ray(t_data *data, t_rays *ray)
 {
+	// this
 	ray->horizontal = get_h_inter(data, ray);
 	ray->virtical = get_v_inter(data, ray);
 	if (ray->virtical.distance <= ray->horizontal.distance)
@@ -66,12 +67,11 @@ void	stream_camera(t_data *data, t_rays *ray)
 	while (data->vars->start_pix < data->vars->end_pix)
 		put_line_on_the_screen(data, ray);
 }
-
 void	ray_casting(t_data *data)
 {
 	double	ray_angle;
 	int		i;
-
+	//this 
 	ray_angle = data->player->rotation_angel - (data->player->fov_angle / 2);
 	i = 0;
 	while (i < data->player->num_rays)

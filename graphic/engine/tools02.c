@@ -12,18 +12,18 @@
 
 #include "../cub3d.h"
 
-void	free_all(t_data *data)
+void	free_all(t_data **data)
 {
-	if (data->map)
-		free(data->map);
-	if (data->player->rays)
-		free(data->player->rays);
-	if (data->player)
-		free(data->player);
-	if (data->mlx)
-		free(data->mlx);
-	if (data->vars)
-		free(data->vars);
+	if ((*data)->map)
+		free((*data)->map);
+	if ((*data)->player->rays)
+		free((*data)->player->rays);
+	if ((*data)->player)
+		free((*data)->player);
+	if ((*data)->mlx)
+		free((*data)->mlx);
+	if ((*data)->vars)
+		free((*data)->vars);
 }
 
 void	mlx_end(t_data *data)
@@ -43,8 +43,10 @@ void	mlx_end(t_data *data)
 
 void	exiting(t_data *data, int var)
 {
+	
 	mlx_end(data);
-	free_all(data);
+	free_all(&data);
+	system("leaks Cub3d");
 	if (var != ERROR)
 		printf("Game closed!\n");
 	exit(var);
