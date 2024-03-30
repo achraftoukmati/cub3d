@@ -6,7 +6,7 @@
 /*   By: alotfi <alotfi@student.1337.ma>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 15:16:35 by alotfi            #+#    #+#             */
-/*   Updated: 2024/03/27 17:07:11 by alotfi           ###   ########.fr       */
+/*   Updated: 2024/03/30 20:27:43 by alotfi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,5 +112,7 @@ void	ptr_check(t_game *glo)
 			&& ft_atoi(glo->f_s[3]) <= 255) || !(ft_atoi(glo->c_s[1]) <= 255
 			&& ft_atoi(glo->c_s[2]) <= 255 && ft_atoi(glo->c_s[3]) <= 255))
 		ft_rr("DO_NOT_EXCEED_255 ❌\n");
+		
 	weet3(glo);
+
 }
