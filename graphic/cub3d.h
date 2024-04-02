@@ -155,7 +155,7 @@ int					init_player(t_data *data);
 int					max_w(char **map);
 int					max_h(char **map);
 
-void				mlx_end(t_data *data);
+void	mlx_end(t_data *data,int var);
 void				free_all(t_data **data);
 int					init(t_data *data, t_game *ayoub);
 void				exiting(t_data *data, int var);

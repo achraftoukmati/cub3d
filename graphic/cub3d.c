@@ -37,7 +37,7 @@ void	escape(void *data)
 int	init_mlx(t_data *data)
 {
 	if(!(data->mlx->ea = mlx_load_png(data->map->ea)) || !(data->mlx->no = mlx_load_png(data->map->no)) || !(data->mlx->so = mlx_load_png(data->map->so)) || !(data->mlx->we = mlx_load_png(data->map->we)))
-		exiting(data,1);
+		exiting(data,2);
 	return (0);
 }
 

@@ -26,28 +26,27 @@ void	free_all(t_data **data)
 		free((*data)->vars);
 }
 
-void	mlx_end(t_data *data)
+void	mlx_end(t_data *data,int var)
 {
 	mlx_delete_image(data->mlx->mlx, data->mlx->img);
 	mlx_close_window(data->mlx->mlx);
 	mlx_terminate(data->mlx->mlx);
-	if(data->mlx->ea)
+	if(var != 2)
+	{
 		mlx_delete_texture(data->mlx->ea);
-	if(data->mlx->so)
 		mlx_delete_texture(data->mlx->so);
-	if(data->mlx->no)
 		mlx_delete_texture(data->mlx->no);
-	if(data->mlx->we)
 		mlx_delete_texture(data->mlx->we);
+	}
 }
 
 void	exiting(t_data *data, int var)
 {
 	
-	mlx_end(data);
+	mlx_end(data,var);
 	free_all(&data);
-	system("leaks Cub3d");
-	if (var != ERROR)
+	system("leaks cub3D");
+	if (var == 0)
 		printf("Game closed!\n");
 	exit(var);
 }
