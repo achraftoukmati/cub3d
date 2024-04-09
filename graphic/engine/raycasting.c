@@ -14,7 +14,6 @@
 
 void	cast_ray(t_data *data, t_rays *ray)
 {
-	// this
 	ray->horizontal = get_h_inter(data, ray);
 	ray->virtical = get_v_inter(data, ray);
 	if (ray->virtical.distance <= ray->horizontal.distance)
@@ -55,10 +54,8 @@ void	stream_camera(t_data *data, t_rays *ray)
 	data->vars->wall_h = (data->map->unit / ray->distance) * ((S_W / 2)
 			/ tan(data->player->fov_angle / 2));
 	data->vars->strip_wall_h = floor(data->vars->wall_h);
-	data->vars->start_pix = (S_H / 2) - (data->vars->wall_h / 2);
-	data->vars->end_pix = (S_H / 2) + (data->vars->wall_h / 2);
-	data->vars->start_pix = fmax(0, data->vars->start_pix);
-	data->vars->end_pix = fmin(S_H, data->vars->end_pix);
+	data->vars->start_pix = fmax(0, (S_H / 2) - (data->vars->wall_h / 2));
+	data->vars->end_pix = fmin(S_H, (S_H / 2) + (data->vars->wall_h / 2));
 	if (ray->flag == 1)
 		data->vars->offset_x = (int)ray->y % data->map->unit;
 	else
@@ -67,11 +64,12 @@ void	stream_camera(t_data *data, t_rays *ray)
 	while (data->vars->start_pix < data->vars->end_pix)
 		put_line_on_the_screen(data, ray);
 }
+
 void	ray_casting(t_data *data)
 {
 	double	ray_angle;
 	int		i;
-	//this 
+
 	ray_angle = data->player->rotation_angel - (data->player->fov_angle / 2);
 	i = 0;
 	while (i < data->player->num_rays)

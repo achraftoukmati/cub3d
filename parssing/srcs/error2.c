@@ -69,36 +69,3 @@ int	ft_strcmp(char *s1, char *s2)
 	else
 		return (1);
 }
-
-void	gook(t_game *glo)
-{
-	int	i;
-	int	j;
-	int	counter;
-	int	flag;
-
-	i = 0;
-	j = 0;
-	counter = 0;
-	flag = 0;
-	while (glo->map[i])
-	{
-		j = 0;
-		while (glo->map[i][j])
-		{
-			if (ft_strchr("N", glo->map[i][j]))
-			{
-				printf("-->%c<---\n", glo->map[i][j]);
-				counter++;
-			}
-			if (glo->map[i][j] == 'N' && glo->map[i][j + 1] == '1')
-			{
-				flag = 1;
-			}
-			j++;
-		}
-		i++;
-	}
-	if (counter > 1 && flag == 0)
-		ft_rr("ERROR 02\n");
-}

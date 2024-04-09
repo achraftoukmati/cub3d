@@ -112,7 +112,5 @@ void	ptr_check(t_game *glo)
 			&& ft_atoi(glo->f_s[3]) <= 255) || !(ft_atoi(glo->c_s[1]) <= 255
 			&& ft_atoi(glo->c_s[2]) <= 255 && ft_atoi(glo->c_s[3]) <= 255))
 		ft_rr("DO_NOT_EXCEED_255 ❌\n");
-		
 	weet3(glo);
-
 }

@@ -20,8 +20,6 @@
 # include <string.h>
 # include <unistd.h>
 
-#endif
-
 typedef struct s_game
 {
 	char	*map_name;
@@ -75,7 +73,7 @@ void		read_map(t_game *glo);
 void		get_ptrs(t_game *glo);
 int			weet(char *str);
 int			weet2(char *str);
-void weet3(t_game *glo);
+void		weet3(t_game *glo);
 // int			f_check(char *str);
 void		valid_path(t_game *glo);
 int			kama(char *str);
@@ -106,7 +104,7 @@ void		chkeck_player(t_game *glo);
 
 // ERROR CHECK
 void		ft_rr(char *str);
-int			one_only_one(char *str );
+int			one_only_one(char *str);
 void		check_pp1(t_game *glo);
 void		play_pos(t_game *glo);
 int			ft_strcmp(char *s1, char *s2);
@@ -115,3 +113,4 @@ void		kechma(t_game *glo);
 int			ger(char *str);
 int			ger1(char *str);
 void		gook(t_game *glo);
+#endif

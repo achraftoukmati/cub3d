@@ -36,7 +36,7 @@ int	check_map_name(char *str)
 	while (str && str[i])
 	{
 		if (str[i] == '.' && str[i + 1] == 'c' && str[i + 2] == 'u' && str[i
-			+ 3] == 'b')
+				+ 3] == 'b')
 			return (1);
 		else
 			i++;

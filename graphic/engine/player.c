@@ -38,7 +38,7 @@ int	locat_player(char **map, char target)
 	return (0);
 }
 
-// this 
+// this
 void	update_player(t_data *data)
 {
 	key_press(data);

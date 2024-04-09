@@ -36,11 +36,14 @@ void	escape(void *data)
 
 int	init_mlx(t_data *data)
 {
-	if(!(data->mlx->ea = mlx_load_png(data->map->ea)) || !(data->mlx->no = mlx_load_png(data->map->no)) || !(data->mlx->so = mlx_load_png(data->map->so)) || !(data->mlx->we = mlx_load_png(data->map->we)))
-		exiting(data,2);
+	data->mlx->ea = mlx_load_png(data->map->ea);
+	data->mlx->no = mlx_load_png(data->map->no);
+	data->mlx->so = mlx_load_png(data->map->so);
+	data->mlx->we = mlx_load_png(data->map->we);
+	if (!data->mlx->ea || !data->mlx->no || !data->mlx->so || !data->mlx->we)
+		exiting(data, 2);
 	return (0);
 }
-
 
 void	start_game(t_data *data)
 {

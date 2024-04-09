@@ -62,7 +62,6 @@ void	syntax_check03(t_game *glo)
 void	syntax_check(t_game *glo)
 {
 	splited_ptrs(glo);
-
 	if (table_counter(glo->no_s) != 2 || table_counter(glo->so_s) != 2
 		|| table_counter(glo->we_s) != 2 || table_counter(glo->ea_s) != 2)
 		ft_rr("SYNTAX_ERROR ❌\n");
@@ -77,7 +76,6 @@ void	syntax_check(t_game *glo)
 	if (ft_strcmp(glo->f_s[0], "F") || ft_strcmp(glo->c_s[0], "C"))
 		ft_rr("SYNTAX_ERROR2 ❌\n");
 	syntax_check2(glo);
-
 	ptr_check(glo);
 	syntax_check03(glo);
 }

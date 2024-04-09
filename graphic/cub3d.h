@@ -129,6 +129,29 @@ typedef struct s_data
 	t_mlx			*mlx;
 	t_vars			*vars;
 }					t_data;
+typedef struct s_game
+{
+	char			*map_name;
+	int				fd;
+	char			**map;
+	char			*no;
+	char			*so;
+	char			*we;
+	char			*ea;
+	char			*f;
+	char			*c;
+	char			**no_s;
+	char			**so_s;
+	char			**we_s;
+	char			**ea_s;
+	char			**f_s;
+	char			**c_s;
+	char			**map_ptr;
+}					t_game;
+
+void				cub_all(t_game *glo);
+void				ft_rr(char *str);
+void				chkeck_player(t_game *glo);
 
 int					get_rgba(int r, int g, int b, int a);
 int					get_color_at_position(mlx_texture_t *texture, int x, int y);
@@ -155,7 +178,7 @@ int					init_player(t_data *data);
 int					max_w(char **map);
 int					max_h(char **map);
 
-void	mlx_end(t_data *data,int var);
+void				mlx_end(t_data *data, int var);
 void				free_all(t_data **data);
 int					init(t_data *data, t_game *ayoub);
 void				exiting(t_data *data, int var);

@@ -21,14 +21,9 @@ int	main(int ac, char **av)
 		ft_rr("UNVALID_INPUT \n");
 	glo.map_name = av[1];
 	cub_all(&glo);
-	
 	chkeck_player(&glo);
-
 	init(&data, &glo);
-	// while(1);
 	start_game(&data);
-
 	exiting(&data, 0);
-	
 	return (0);
 }

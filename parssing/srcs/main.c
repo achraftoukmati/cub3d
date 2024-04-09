@@ -66,24 +66,3 @@ void	chkeck_player(t_game *glo)
 		i++;
 	}
 }
-
-// int	ft_main(int ac, char **av)
-// {
-// 	t_game	glo;
-// 	int		i;
-
-// 	if (ac != 2)
-// 	{
-// 		ft_rr("UNVALID_INPUT 😨\n");
-// 	}
-// 	glo.map_name = av[1];
-// 	cub_all(&glo);
-// 	chkeck_player(&glo);
-// 	i = 0;
-// 	while (glo.map_ptr[i])
-// 	{
-// 		printf("%s\n", glo.map_ptr[i]);
-// 		i++;
-// 	}
-// 	return (0);
-// }

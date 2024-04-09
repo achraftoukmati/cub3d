@@ -64,8 +64,6 @@ void	get_map(t_game *glo)
 	if (glo->map[i] == NULL)
 		ft_rr("I_THINK_YOU_FORGOT_A_MAP1 🤓\n");
 	glo->map_ptr = &glo->map[i];
-	// if (glo->map_ptr[i] == NULL)
-	// 	ft_rr("I_THINK_YOU_FORGOT_A_MAP2 🤓\n");
 }
 
 void	get_ptrs(t_game *glo)
